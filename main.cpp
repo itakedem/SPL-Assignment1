@@ -13,3 +13,8 @@ int main(int argc, char** argv){
     sess.simulate();
     return 0;
 }
+
+void addAgent(const Agent& agent):
+{
+
+}
