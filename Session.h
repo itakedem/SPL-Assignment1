@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include "Graph.h"
+using namespace std;
 
 class Agent;
 
@@ -30,7 +31,7 @@ private:
     TreeType treeType;
     std::vector<Agent*> agents;
     int cycle;
-    vector future_agents;
+    vector<vector<char>>> future_agents;
 
 }
 

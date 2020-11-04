@@ -6,3 +6,15 @@ using namespace std;
     Agent(Session& session): session(session){
 
     }
+
+void ContactTracer::act() {
+
+}
+
+Virus::Virus(int nodeInd, Session &session) {
+
+}
+
+void Virus::act() {
+
+}
