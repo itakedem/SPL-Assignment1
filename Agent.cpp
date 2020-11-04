@@ -2,5 +2,7 @@ using namespace std;
 #include "Agent.h"
 #include "Session.h"
 
-public:
-    Agent
+
+    Agent(Session& session): session(session){
+
+    }

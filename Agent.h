@@ -11,7 +11,7 @@ public:
 
 protected:
     Session& session;
-}
+};
 
 class ContactTracer: public Agent{
 public:
@@ -28,6 +28,6 @@ public:
     virtual void act();
 private:
     const int nodeInd;
-}
+};
 
 #endif
