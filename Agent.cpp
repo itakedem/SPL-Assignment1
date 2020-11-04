@@ -3,4 +3,6 @@ using namespace std;
 #include "Session.h"
 
 
-    Agent(Session& session): session(session){}
+    Agent(Session& session): session(session){
+
+    }

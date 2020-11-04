@@ -20,6 +20,30 @@ Session::Session(const string& path):
             future_agents = j["agents"];
         }
 
+void Session::simulate() {
+
+}
+
+void Session::addAgent(const Agent &agent) {
+
+}
+
+void Session::setGraph(const Graph &graph) {
+
+}
+
+void Session::enqueueInfected(int) {
+
+}
+
+int Session::dequeueInfected() {
+    return 0;
+}
+
+TreeType Session::getTreeType() const {
+    return Root;
+}
+
 public:
     void addVectorAgents():     //creates the vector of agents in the session, based on the json config file
     {
