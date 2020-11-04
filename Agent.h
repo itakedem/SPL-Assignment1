@@ -2,6 +2,7 @@
 #define AGENT_H_
 
 #include <vector>
+#include "Session.h"
 
 class Agent{
 public:
@@ -18,12 +19,12 @@ public:
     ContactTracer(Session& session);
 
     virtual void act();
-}
+};
 
 
 class Virus: public Agent{
 public:
-    Virus(int nodeInd, Session& session);
+    Virus(int nodeInd, Session &session);
 
     virtual void act();
 private:

@@ -11,11 +11,11 @@ void ContactTracer::act() {
 
 }
 
-Virus::Virus(int nodeInd, Session &session) {
-    nodeInd=nodeInd;
-    session = session;
+Virus::Virus(int nodeInd, Session &session) : Agent(session), nodeInd(nodeInd) {
 }
 
 void Virus::act() {
 
 }
+
+Agent::Agent(Session &session): session(session){}
