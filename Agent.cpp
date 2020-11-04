@@ -12,7 +12,8 @@ void ContactTracer::act() {
 }
 
 Virus::Virus(int nodeInd, Session &session) {
-
+    nodeInd=nodeInd;
+    session = session;
 }
 
 void Virus::act() {
