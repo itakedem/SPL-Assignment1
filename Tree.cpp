@@ -4,9 +4,7 @@
 
 #include "Tree.h"
 
-Tree::Tree(int rootLabel) {
-
-}
+Tree::Tree(int rootLabel): node(rootLabel){}
 
 void Tree::addChild(const Tree &child) {
 
@@ -16,18 +14,21 @@ Tree *Tree::createTree(const Session &session, int rootLabel) {
     return nullptr;
 }
 
-CycleTree::CycleTree(int rootLabel, int currCycle) {
-
-}
+CycleTree::CycleTree(int rootLabel, int currCycle): Tree(rootLabel), currCycle(currCycle){}
 
 int CycleTree::traceTree() {
     return 0;
 }
 
-int RootTree::traceTree() {
+
+MaxRankTree::MaxRankTree(int rootLabel):Tree(rootLabel) {}
+
+int MaxRankTree::traceTree() {
     return 0;
 }
 
-int MaxRankTree::traceTree() {
+RootTree::RootTree(int rootLabel):Tree(rootLabel) {}
+
+int RootTree::traceTree() {
     return 0;
 }
