@@ -31,8 +31,8 @@ private:
     TreeType treeType;
     std::vector<Agent*> agents;
     int cycle;
-    vector<vector<char>>> future_agents;
+    vector<vector<char>> future_agents;
 
-}
+};
 
 #endif
