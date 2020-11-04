@@ -3,19 +3,21 @@ using namespace std;
 #include "Session.h"
 
 
-    Agent(Session& session): session(session){
+Agent::Agent(Session &session): session(session){}
+ContactTracer::ContactTracer(Session &session) : Agent(session) {}
+Virus::Virus(int nodeInd, Session &session) : nodeInd(nodeInd),Agent(session) {}
 
-    }
 
 void ContactTracer::act() {
 
 }
 
-Virus::Virus(int nodeInd, Session &session) : Agent(session), nodeInd(nodeInd) {
-}
+
+
+
 
 void Virus::act() {
 
 }
 
-Agent::Agent(Session &session): session(session){}
+
