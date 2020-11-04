@@ -11,11 +11,13 @@ using json = nlohmann::json;
 Session::Session(const string& path):
         {
             ifstream i(*path);          //maybe need * maybe not
-            g = new Graph(i["graph"]);
+            json j;
+            j << i;
+            g = new Graph(j["graph"]);
             cycle = 0;
-            treetype = i["tree"];
+            treetype = j["tree"];
             agents = new vector<Agent*>;
-            future_agents = i["agents"];
+            future_agents = j["agents"];
         }
 
 public:
@@ -24,9 +26,9 @@ public:
         for (auto agent: this.future_agents):
         {
             if (agent[0] == "V")
-                agents.pushback(new Virus(agent[1], this));
+                agents.push_back(new Virus(agent[1], this));
             else
-                agents.pushback(new ContactTracer(this));
+                agents.push_back(new ContactTracer(this));
         }
     }
     void simulate():
