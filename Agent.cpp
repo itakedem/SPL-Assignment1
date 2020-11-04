@@ -1,4 +1,6 @@
-//
-// Created by Itamar Kedem on 02/11/2020.
-//
+using namespace std;
+#include "Agent.h"
+#include "Session.h"
 
+public:
+    Agent

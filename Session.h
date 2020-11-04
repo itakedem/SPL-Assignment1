@@ -29,6 +29,9 @@ private:
     Graph g;
     TreeType treeType;
     std::vector<Agent*> agents;
+    int cycle;
+    vector future_agents;
+
 }
 
 #endif
