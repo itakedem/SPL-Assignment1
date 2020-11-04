@@ -17,7 +17,7 @@ private:
     int node;
 protected:
     std::vector<Tree*> children;
-}
+};
 
 class CycleTree: public Tree{
 public:
@@ -25,18 +25,18 @@ public:
     virtual int traceTree();
 private:
     int currCycle;
-}
+};
 
 class MaxRankTree: public Tree{
 public:
     MaxRankTree(int rootLabel);
     virtual int traceTree();
-}
+};
 
 class RootTree: public Tree{
 public:
     RootTree(int rootLabel);
     virtual int traceTree();
-}
+};
 
 #endif
