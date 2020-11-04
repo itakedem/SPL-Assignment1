@@ -10,14 +10,13 @@ using json = nlohmann::json;
 
 Session::Session(const string& path):
         {
-            ifstream i(*path);          //maybe need * maybe not
+            ifstream i(path);          //maybe need * maybe not
             json j;
             j << i;
             g = new Graph(j["graph"]);
             cycle = 0;
             treetype = j["tree"];
             agents = new vector<Agent*>;
-            future_agents = j["agents"];
         }
 
 void Session::simulate() {

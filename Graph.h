@@ -7,6 +7,8 @@ class Graph{
 public:
     Graph(std::vector<std::vector<int>> matrix);
 
+    Graph(Graph *pGraph);       //created by CLion
+
     void infectNode(int nodeInd);
     bool isInfected(int nodeInd);
 private:
