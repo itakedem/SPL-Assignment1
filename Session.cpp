@@ -8,15 +8,15 @@ using namespace std;
 using json = nlohmann::json;
 
 
-Session::Session(const string& path):
+Session::Session(const string& path): g(nullptr)
         {
             ifstream i(path);          //maybe need * maybe not
             json j;
             j << i;
             g = new Graph(j["graph"]);
             cycle = 0;
-            treetype = j["tree"];
-            agents = new vector<Agent*>;
+            treeType = j["tree"];
+            agents = vector<Agent*>();      //why can't add new?
         }
 
 void Session::simulate() {
@@ -40,7 +40,12 @@ int Session::dequeueInfected() {
 }
 
 TreeType Session::getTreeType() const {
-    return Root;
+    return treeType;
+}
+
+Graph& Session::getGraph()
+{
+    return g;           //needs to send reference!!!!!
 }
 
 
