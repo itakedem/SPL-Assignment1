@@ -30,6 +30,7 @@ private:
 class MaxRankTree: public Tree{
 public:
     MaxRankTree(int rootLabel);
+    MaxRankTree(MaxRankTree *mrt);
     virtual int traceTree();
 };
 

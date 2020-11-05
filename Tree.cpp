@@ -3,8 +3,9 @@
 //
 
 #include "Tree.h"
+using namespace std;
 
-Tree::Tree(int rootLabel): node(rootLabel){}
+Tree::Tree(int rootLabel): node(rootLabel){children = new vector<Tree*> ;}
 
 void Tree::addChild(const Tree &child) {
 
@@ -22,7 +23,6 @@ int CycleTree::traceTree() {
 
 
 MaxRankTree::MaxRankTree(int rootLabel):Tree(rootLabel) {}
-
 int MaxRankTree::traceTree() {
     return 0;
 }

@@ -40,11 +40,16 @@ int Session::dequeueInfected() {
 }
 
 TreeType Session::getTreeType() const {
-    return Root;
+    return treeType;
 }
 
-public:
-    void addVectorAgents():     //creates the vector of agents in the session, based on the json config file
+Graph& Session::getGraph()
+{
+    return g;//needs to send reference!!!!!
+}
+
+
+    void addVectorAgents()    //creates the vector of agents in the session, based on the json config file
     {
         for (auto agent: this.future_agents):
         {
