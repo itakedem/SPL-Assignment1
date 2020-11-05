@@ -25,10 +25,12 @@ public:
 class Virus: public Agent{
 public:
     Virus(int nodeInd, Session &session);
+    int nextNodeToInfect(int ind);
 
     virtual void act();
 private:
     const int nodeInd;
+    bool active;
 };
 
 #endif
