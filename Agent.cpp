@@ -24,7 +24,7 @@ void Virus::act()
     Graph& graph = session.getGraph();
     if (!graph.isInfected(nodeInd))
         {graph.infectNode(nodeInd);}
-    int nextNode = nextNodeToInfect(nodeInd);
+    int nextNode = nextNodeToInfect(nodeInd,graph);
     if (nextNode != -1)                     //-1 means no next node
     {
         Virus *newVirus = new Virus(nextNode, session);         //do we need to delete???
@@ -32,6 +32,14 @@ void Virus::act()
     }
     else
         this->active= false;
+}
+
+int nextNodeToInfect(int ind,  Graph &graph)
+{
+    for (int i=0; i<graph.getedges().size(); i++)
+    {
+
+    }
 }
 
 
