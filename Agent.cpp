@@ -8,7 +8,8 @@ ContactTracer::ContactTracer(Session &session) : Agent(session) {}
 Virus::Virus(int nodeInd, Session &session) : nodeInd(nodeInd),Agent(session) {}
 
 
-void ContactTracer::act() {
+void ContactTracer::act()
+{
 
 }
 
@@ -16,8 +17,12 @@ void ContactTracer::act() {
 
 
 
-void Virus::act() {
+void Virus::act()
+{
+    if (session.getGraph().isInfected(nodeInd))
+    {
 
+    }
 }
 
 
