@@ -36,10 +36,15 @@ void Virus::act()
 
 int nextNodeToInfect(int ind,  Graph &graph)
 {
-    for (int i=0; i<graph.getEdges().size(); i++)
+    std::vector<std::vector<int>>& edges = graph.getEdges();
+    for (int i=0; i<edges.size(); i++)
     {
-
+        int edge = edges[ind][i];
+        if (edge == 1)              //means there's an edge between ind and i
+            if (!graph.isInfected(edge))
+                return edge;
     }
+    return -1;
 }
 
 

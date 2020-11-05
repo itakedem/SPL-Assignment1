@@ -30,7 +30,7 @@ public:
     virtual void act();
 private:
     const int nodeInd;
-    bool active;
+    bool active;                    //if false, there's no uninfected neighbors
 };
 
 #endif
