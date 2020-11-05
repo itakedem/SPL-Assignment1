@@ -17,7 +17,6 @@ enum TreeType{
 class Session{
 public:
     Session(const std::string& path);
-
     void simulate();
     void addAgent(const Agent& agent);
     void setGraph(const Graph& graph);
@@ -33,6 +32,7 @@ private:
     std::vector<Agent*> agents;
     int cycle;
     vector<vector<char>> future_agents;
+    vector<int> infectedQueue;
 
 };
 
