@@ -25,7 +25,7 @@ public:
     void enqueueInfected(int);
     int dequeueInfected();
     TreeType getTreeType() const;
-    const Graph& getGraph();
+    Graph& getGraph();
 
 private:
     Graph g;
