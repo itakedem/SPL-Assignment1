@@ -36,7 +36,7 @@ void Virus::act()
 
 int nextNodeToInfect(int ind,  Graph &graph)
 {
-    for (int i=0; i<graph.getedges().size(); i++)
+    for (int i=0; i<graph.getEdges().size(); i++)
     {
 
     }
