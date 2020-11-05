@@ -7,6 +7,7 @@
 class Agent{
 public:
     Agent(Session& session);
+    Agent(Agent *newAgent);
 
     virtual void act()=0;
 

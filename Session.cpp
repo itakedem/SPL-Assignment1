@@ -16,18 +16,19 @@ Session::Session(const string& path): g(nullptr)                    //why must a
             g = new Graph(j["graph"]);
             cycle = 0;
             treeType = j["tree"];
-            nodesStat[g.getEdges().size()];
-            for (int i=0; i<g.getEdges().size(); i++ )
-                nodesStat[i] = 0;
-
+            j_agents = j["agents"];
         }
 
-void Session::simulate() {
+void Session::simulate()
+{
+    sourceAgents();
 
 }
 
-void Session::addAgent(const Agent &agent) {
-
+void Session::addAgent(const Agent &agent)
+{
+    Agent* newA = new Agent(agent);
+    agents.push_back(agent);
 }
 
 void Session::setGraph(const Graph &graph) {
@@ -52,19 +53,15 @@ Graph& Session::getGraph()
 }
 
 
-    void Session::addVectorAgents()     //creates the vector of agents in the session, based on the json config file
+    void Session::sourceAgents()     //creates the vector of agents in the session, based on the json config file
     {
-        for (auto agent: this->future_agents)
+        for (auto agent: j_agents)
         {
-            if (&agent[0] == "V")
+            if (agent[0] == "V")
                 agents.push_back(new Virus(agent[1], *this));
             else
                 agents.push_back(new ContactTracer(*this));
         }
-    }
-    void simulate()
-    {
-
     }
 
 
