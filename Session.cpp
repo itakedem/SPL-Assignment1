@@ -16,6 +16,10 @@ Session::Session(const string& path): g(nullptr)                    //why must a
             g = new Graph(j["graph"]);
             cycle = 0;
             treeType = j["tree"];
+            nodesStat[g.getEdges().size()];
+            for (int i=0; i<g.getEdges().size(); i++ )
+                nodesStat[i] = 0;
+
         }
 
 void Session::simulate() {
