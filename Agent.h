@@ -24,7 +24,7 @@ public:
 
 class Virus: public Agent{
 public:
-    Virus(int nodeInd, Session &session);
+    Virus(int nodeInd, Session& session);
     int nextNodeToInfect(int ind, Graph graph);
 
     virtual void act();

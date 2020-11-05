@@ -43,18 +43,18 @@ TreeType Session::getTreeType() const {
     return Root;
 }
 
-public:
-    void addVectorAgents():     //creates the vector of agents in the session, based on the json config file
+
+    void Session::addVectorAgents()     //creates the vector of agents in the session, based on the json config file
     {
-        for (auto agent: this.future_agents):
+        for (auto agent: this->future_agents)
         {
-            if (agent[0] == "V")
-                agents.push_back(new Virus(agent[1], this));
+            if (&agent[0] == "V")
+                agents.push_back(new Virus(agent[1], *this));
             else
-                agents.push_back(new ContactTracer(this));
+                agents.push_back(new ContactTracer(*this));
         }
     }
-    void simulate():
+    void simulate()
     {
 
     }
