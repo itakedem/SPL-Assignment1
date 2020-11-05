@@ -5,7 +5,7 @@
 #include "Tree.h"
 using namespace std;
 
-Tree::Tree(int rootLabel): node(rootLabel){children = new vector<Tree*> ;}
+Tree::Tree(int rootLabel): node(rootLabel){}
 
 void Tree::addChild(const Tree &child) {
 

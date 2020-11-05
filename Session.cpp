@@ -8,7 +8,7 @@ using namespace std;
 using json = nlohmann::json;
 
 
-Session::Session(const string& path): g(nullptr)
+Session::Session(const string& path): g(nullptr)                    //why must add null g???
         {
             ifstream i(path);          //maybe need * maybe not
             json j;
@@ -16,7 +16,6 @@ Session::Session(const string& path): g(nullptr)
             g = new Graph(j["graph"]);
             cycle = 0;
             treeType = j["tree"];
-            agents = vector<Agent*>();      //why can't add new?
         }
 
 void Session::simulate() {
