@@ -10,6 +10,10 @@ public:
     Graph(Graph *pGraph);       //created by CLion
     std::vector<std::vector<int>>& getEdges();
 
+    Graph(Graph *pGraph);       //created by CLion
+
+    Graph(Graph *pGraph);       //created by CLion
+
     void infectNode(int nodeInd);
     bool isInfected(int nodeInd);
 private:
