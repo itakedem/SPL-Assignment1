@@ -8,7 +8,7 @@ public:
     Graph(std::vector<std::vector<int>> matrix);
 
     Graph(Graph *pGraph);       //created by CLion
-    std::vector<std::vector<int>> getEdges();
+    std::vector<std::vector<int>>& getEdges();
 
     void infectNode(int nodeInd);
     bool isInfected(int nodeInd);
