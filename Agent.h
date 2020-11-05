@@ -9,7 +9,7 @@ public:
     Agent(Session& session);
     Agent(Agent *newAgent);
 
-    virtual void act()=0;
+    virtual void act(Session& session)=0;
 
 protected:
     Session& session;

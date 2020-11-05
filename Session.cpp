@@ -28,7 +28,7 @@ void Session::simulate()
 void Session::addAgent(const Agent &agent)
 {
     Agent* newA = new Agent(agent);
-    agents.push_back(agent);
+    agents.push_back(newA);
 }
 
 void Session::setGraph(const Graph &graph) {

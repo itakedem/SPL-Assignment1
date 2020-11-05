@@ -6,11 +6,11 @@ using namespace std;
 Agent::Agent(Session &session): session(session){}
 ContactTracer::ContactTracer(Session &session) : Agent(session) {}
 Virus::Virus(int nodeInd, Session &session) : nodeInd(nodeInd), Agent(session), active(true) {}
-
+Agent::Agent(Agent agent)
 
 void ContactTracer::act()
 {
-
+    return;
 }
 
 
