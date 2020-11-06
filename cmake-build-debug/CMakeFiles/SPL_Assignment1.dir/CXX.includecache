@@ -6,27 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/spl211/CLionProjects/SPL-Assignment1/Agent.h
-vector
--
-Session.h
-/home/spl211/CLionProjects/SPL-Assignment1/Session.h
-
 /home/spl211/CLionProjects/SPL-Assignment1/Graph.h
 vector
 -
-
-/home/spl211/CLionProjects/SPL-Assignment1/Session.cpp
-Session.h
-/home/spl211/CLionProjects/SPL-Assignment1/Session.h
-iostream
--
-fstream
--
-json.hpp
-/home/spl211/CLionProjects/SPL-Assignment1/json.hpp
-Agent.h
-/home/spl211/CLionProjects/SPL-Assignment1/Agent.h
 
 /home/spl211/CLionProjects/SPL-Assignment1/Session.h
 fstream
@@ -373,4 +355,14 @@ limits
 -
 type_traits
 -
+
+/home/spl211/CLionProjects/SPL-Assignment1/main.cpp
+iostream
+-
+Session.h
+/home/spl211/CLionProjects/SPL-Assignment1/Session.h
+fstream
+-
+json.hpp
+/home/spl211/CLionProjects/SPL-Assignment1/json.hpp
 

@@ -13,6 +13,7 @@ Session::Session(const string& path): g(nullptr)                    //why must a
             ifstream i(path);          //maybe need * maybe not
             json j;
             j << i;
+            //j = json::parse(i);
             g = new Graph(j["graph"]);
             cycle = 0;
             treeType = j["tree"];
@@ -53,16 +54,16 @@ Graph& Session::getGraph()
 }
 
 
-    void Session::sourceAgents()     //creates the vector of agents in the session, based on the json config file
+void Session::sourceAgents()     //creates the vector of agents in the session, based on the json config file
+{
+    for (auto agent: j_agents)
     {
-        for (auto agent: j_agents)
-        {
-            if (agent[0] == "V")
-                agents.push_back(new Virus(agent[1]));
-            else
-                agents.push_back(new ContactTracer());
-        }
+        if (agent[0] == "V")
+            agents.push_back(new Virus(agent[1]));
+        else
+            agents.push_back(new ContactTracer());
     }
+}
 
 
 

@@ -8,7 +8,7 @@ include_directories(.)
 add_executable(SPL_Assignment1
         Agent.cpp
         Agent.h
-        config.json
+        Configs/config.json
         Graph.cpp
         Graph.h
         json.hpp

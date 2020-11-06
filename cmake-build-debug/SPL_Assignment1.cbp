@@ -92,6 +92,9 @@
 		<Unit filename="/home/spl211/CLionProjects/SPL-Assignment1/Agent.h">
 			<Option target="SPL_Assignment1"/>
 		</Unit>
+		<Unit filename="/home/spl211/CLionProjects/SPL-Assignment1/Configs/config.json">
+			<Option target="SPL_Assignment1"/>
+		</Unit>
 		<Unit filename="/home/spl211/CLionProjects/SPL-Assignment1/Graph.cpp">
 			<Option target="SPL_Assignment1"/>
 		</Unit>
@@ -108,9 +111,6 @@
 			<Option target="SPL_Assignment1"/>
 		</Unit>
 		<Unit filename="/home/spl211/CLionProjects/SPL-Assignment1/Tree.h">
-			<Option target="SPL_Assignment1"/>
-		</Unit>
-		<Unit filename="/home/spl211/CLionProjects/SPL-Assignment1/config.json">
 			<Option target="SPL_Assignment1"/>
 		</Unit>
 		<Unit filename="/home/spl211/CLionProjects/SPL-Assignment1/json.hpp">
