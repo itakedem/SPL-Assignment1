@@ -58,9 +58,9 @@ Graph& Session::getGraph()
         for (auto agent: j_agents)
         {
             if (agent[0] == "V")
-                agents.push_back(new Virus(agent[1], *this));
+                agents.push_back(new Virus(agent[1]));
             else
-                agents.push_back(new ContactTracer(*this));
+                agents.push_back(new ContactTracer());
         }
     }
 

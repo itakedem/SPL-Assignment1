@@ -3,12 +3,17 @@ using namespace std;
 #include "Session.h"
 
 
-Agent::Agent(Session &session): session(session){}
-ContactTracer::ContactTracer(Session &session) : Agent(session) {}
-Virus::Virus(int nodeInd, Session &session) : nodeInd(nodeInd), Agent(session), active(true) {}
-Agent::Agent(Agent agent)
+Agent::Agent() {}
 
-void ContactTracer::act()
+void Agent::act(Session &session) {
+
+}
+
+ContactTracer::ContactTracer()  {}
+Virus::Virus(int nodeInd) : nodeInd(nodeInd), active(true) {}
+//Agent::Agent(Agent agent)
+
+void ContactTracer::act(Session& session)
 {
     return;
 }
@@ -17,7 +22,7 @@ void ContactTracer::act()
 
 
 
-void Virus::act()
+void Virus::act(Session &session)
 {
     if (!this->active)
         return;
@@ -27,16 +32,17 @@ void Virus::act()
     int nextNode = nextNodeToInfect(nodeInd,graph);
     if (nextNode != -1)                     //-1 means no next node
     {
-        Virus *newVirus = new Virus(nextNode, session);         //do we need to delete???
+        Virus *newVirus = new Virus(nextNode);         //do we need to delete???
         session.addAgent(*newVirus);        //why we need * and not &?
     }
     else
         this->active= false;
 }
 
-int nextNodeToInfect(int ind,  Graph &graph)
+
+int Virus::nextNodeToInfect(int ind, Graph &graph)
 {
-    std::vector<std::vector<int>>& edges = graph.getEdges();
+    vector<vector<int>>& edges = graph.getEdges();
     for (int i=0; i<edges.size(); i++)
     {
         int edge = edges[ind][i];

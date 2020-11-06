@@ -6,29 +6,27 @@
 
 class Agent{
 public:
-    Agent(Session& session);
-    Agent(Agent *newAgent);
+    Agent();
+    //Agent(Agent *newAgent);
 
-    virtual void act(Session& session)=0;
+    virtual void act(Session& session);
 
-protected:
-    Session& session;
 };
 
 class ContactTracer: public Agent{
 public:
-    ContactTracer(Session& session);
+    ContactTracer();
 
-    virtual void act();
+    virtual void act(Session& session);
 };
 
 
 class Virus: public Agent{
 public:
-    Virus(int nodeInd, Session& session);
-    int nextNodeToInfect(int ind, Graph graph);
+    Virus(int nodeInd);
+    int nextNodeToInfect(int ind, Graph &graph);
 
-    virtual void act();
+    virtual void act(Session &session);
 private:
     const int nodeInd;
     bool active;                    //if false, there's no uninfected neighbors

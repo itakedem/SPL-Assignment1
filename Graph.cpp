@@ -4,7 +4,7 @@ using namespace std;
 
 
 
-Graph::Graph(std::vector<std::vector<int>> matrix): edges(std::move(matrix))
+Graph::Graph(std::vector<std::vector<int>> matrix): edges(move(matrix))
 {
     nodesStat[matrix.size()];
     for (int i = 0; i<matrix.size(); i++)
