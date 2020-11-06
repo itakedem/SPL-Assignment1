@@ -13,6 +13,7 @@ Graph::Graph(std::vector<std::vector<int>> matrix): edges(move(matrix))
 Graph::Graph(Graph *pGraph) { edges = (*pGraph).edges;
 }
 
+Graph::Graph() = default;
 
 void Graph::infectNode(int nodeInd)
 {
@@ -30,6 +31,8 @@ vector<vector<int>>& Graph::getEdges()
 {
     return edges;
 }
+
+
 
 
 

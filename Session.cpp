@@ -8,13 +8,13 @@ using namespace std;
 using json = nlohmann::json;
 
 
-Session::Session(const string& path): g(nullptr)                    //why must add null g???
+Session::Session(const string& path)
         {
             ifstream i(path);          //maybe need * maybe not
             json j;
             j << i;
             //j = json::parse(i);
-            g = new Graph(j["graph"]);
+            Graph g((j["graph"]));
             cycle = 0;
             treeType = j["tree"];
             j_agents = j["agents"];

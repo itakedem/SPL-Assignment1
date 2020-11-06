@@ -7,7 +7,7 @@ using namespace std;
 class Graph{
 public:
     Graph(std::vector<std::vector<int>> matrix);
-
+    Graph();
     Graph(Graph *pGraph);       //created by CLion
     vector<vector<int>>& getEdges();
 
