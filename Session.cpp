@@ -14,7 +14,7 @@ Session::Session(const string& path)
             json j;
             j << i;
             //j = json::parse(i);
-            Graph g((j["graph"]));
+            g = Graph((j["graph"]));
             cycle = 0;
             treeType = j["tree"];
             j_agents = j["agents"];
