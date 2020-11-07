@@ -2,16 +2,18 @@ using namespace std;
 #include "Agent.h"
 #include "Session.h"
 
+/*********************** Agent **********************/
 
 Agent::Agent() {}
 
-void Agent::act(Session &session) {
-
-}
+/*********************** ContactTracer **********************/
 
 ContactTracer::ContactTracer()  {}
-Virus::Virus(int nodeInd) : nodeInd(nodeInd), active(true) {}
-//Agent::Agent(Agent agent)
+
+
+Agent *ContactTracer::clone() const {
+    return new ContactTracer(*this);
+}
 
 void ContactTracer::act(Session& session)
 {
@@ -20,6 +22,18 @@ void ContactTracer::act(Session& session)
 
 
 
+
+
+
+
+/*********************** Virus **********************/
+
+
+Virus::Virus(int nodeInd) : nodeInd(nodeInd), active(true) {}
+
+Agent *Virus::clone() const {
+    return new Virus(*this);
+}
 
 
 void Virus::act(Session &session)
@@ -42,7 +56,7 @@ void Virus::act(Session &session)
 
 int Virus::nextNodeToInfect(int ind, Graph &graph)
 {
-    vector<vector<int>>& edges = graph.getEdges();
+    const vector<vector<int>>& edges = graph.getEdges();
     for (int i=0; i<edges.size(); i++)
     {
         int edge = edges[ind][i];
@@ -52,5 +66,7 @@ int Virus::nextNodeToInfect(int ind, Graph &graph)
     }
     return -1;
 }
+
+
 
 

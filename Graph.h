@@ -6,16 +6,16 @@ using namespace std;
 
 class Graph{
 public:
-    Graph(std::vector<std::vector<int>> matrix);
+    Graph(vector<vector<int>> matrix);
     Graph();
     Graph(Graph *pGraph);       //created by CLion
-    vector<vector<int>>& getEdges();
+    const vector<vector<int>>& getEdges();
 
     void infectNode(int nodeInd);
     bool isInfected(int nodeInd);
 private:
-    std::vector<std::vector<int>> edges;
-//    int nodesStat[];
+    vector<vector<int>> edges;
+    vector<int> nodesStat;
 };
 
 #endif

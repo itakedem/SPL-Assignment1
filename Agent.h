@@ -8,15 +8,15 @@ class Agent{
 public:
     Agent();
     //Agent(Agent *newAgent);
-
-    virtual void act(Session& session);
+    virtual Agent* clone() const =0;
+    virtual void act(Session& session)=0;
 
 };
 
 class ContactTracer: public Agent{
 public:
     ContactTracer();
-
+    virtual Agent* clone() const;
     virtual void act(Session& session);
 };
 
@@ -24,8 +24,8 @@ public:
 class Virus: public Agent{
 public:
     Virus(int nodeInd);
+    virtual Agent* clone() const;
     int nextNodeToInfect(int ind, Graph &graph);
-
     virtual void act(Session &session);
 private:
     const int nodeInd;

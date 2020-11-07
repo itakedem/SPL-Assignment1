@@ -8,9 +8,9 @@ class Session;
 class Tree{
 public:
     Tree(int rootLabel);
+    Tree(const Tree& other);
+    virtual Tree* clone() const = 0;
     void addChild(const Tree& child);
-
-
     static Tree* createTree(const Session& session, int rootLabel);
     virtual int traceTree()=0;
 private:
@@ -23,6 +23,7 @@ protected:
 class CycleTree: public Tree{
 public:
     CycleTree(int rootLabel, int currCycle);
+    virtual Tree* clone() const;
     virtual int traceTree();
 private:
     int currCycle;
@@ -31,13 +32,14 @@ private:
 class MaxRankTree: public Tree{
 public:
     MaxRankTree(int rootLabel);
-    MaxRankTree(MaxRankTree *mrt);
+    virtual Tree* clone() const;
     virtual int traceTree();
 };
 
 class RootTree: public Tree{
 public:
     RootTree(int rootLabel);
+    virtual Tree* clone() const;
     virtual int traceTree();
 };
 

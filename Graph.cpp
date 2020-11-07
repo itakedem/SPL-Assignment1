@@ -4,30 +4,37 @@ using namespace std;
 
 
 
-Graph::Graph(std::vector<std::vector<int>> matrix): edges(move(matrix))
+Graph::Graph(vector<vector<int>> matrix): edges(move(matrix))
 {
-  /*  nodesStat[matrix.size()];
     for (int i = 0; i<matrix.size(); i++)
-        nodesStat[i] = 0;*/
+        nodesStat.push_back(0); //all nodes are healthy at initiate
 } //need to delete edges???
-Graph::Graph(Graph *pGraph) { edges = (*pGraph).edges;
+
+
+Graph::Graph(Graph *pGraph)
+{
+    edges = (*pGraph).edges, nodesStat = (*pGraph).nodesStat;
 }
 
 Graph::Graph() = default;
 
+
+
+
+
+
 void Graph::infectNode(int nodeInd)
 {
-   // nodesStat[nodeInd] = 1;
+    nodesStat[nodeInd] = 1;
                                     //need to add to infectedQueue
 }
 
 bool Graph::isInfected(int nodeInd)
 {
-    true;
-    //return nodesStat[nodeInd] == 1;
+    return nodesStat[nodeInd] == 1;
 }
 
-vector<vector<int>>& Graph::getEdges()
+const vector<vector<int>>& Graph::getEdges()
 {
     return edges;
 }

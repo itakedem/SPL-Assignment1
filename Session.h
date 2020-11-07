@@ -19,22 +19,22 @@ enum TreeType{
 
 class Session{
 public:
-    Session(const std::string& path);
+    Session(const string& path);
+    Session(const Session& other);
     void simulate();
     void addAgent(const Agent& agent);
     void setGraph(const Graph& graph);
-    void sourceAgents();
     void enqueueInfected(int);
     int dequeueInfected();
     TreeType getTreeType() const;
     Graph& getGraph();
+    int getCycle() const;
 
 private:
     Graph g;
     TreeType treeType;
     std::vector<Agent*> agents;
     int cycle;
-    json j_agents;
     vector<int> infectedQueue;
 
 };
