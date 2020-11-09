@@ -21,11 +21,12 @@ Graph::Graph(Graph *pGraph)
 
 
 
-const vector<vector<int>> &Graph::getEdges() {
+const vector<vector<int>> &Graph::getEdges() const
+{
     return edges;
 }
 
-int Graph::amountNeighbors(int nodeInd)
+int Graph::amountNeighbors(int nodeInd) const
 {
     int amount = 0;
     for(int i = 0; i<edges.size(); i++)

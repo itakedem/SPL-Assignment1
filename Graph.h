@@ -9,8 +9,8 @@ public:
     Graph(vector<vector<int>> matrix);
     Graph();
     Graph(Graph *pGraph);       //created by CLion
-    const vector<vector<int>>& getEdges();
-    int amountNeighbors(int nodeInd);
+    const vector<vector<int>>& getEdges() const;
+    int amountNeighbors(int nodeInd) const;
     void infectNode(int nodeInd);
     bool isInfected(int nodeInd);
 private:

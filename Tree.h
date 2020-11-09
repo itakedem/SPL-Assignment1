@@ -1,6 +1,6 @@
 #ifndef TREE_H_
 #define TREE_H_
-
+#include "Graph.h"
 #include <vector>
 
 class Session;
@@ -13,8 +13,13 @@ public:
     void addChild(const Tree& child);
     static Tree* createTree(const Session& session, int rootLabel);
     virtual int traceTree()=0;
+    void BFS(Session& session);
+    void BFSRun(Tree* parent,vector<int> added, const Session& session);
+    int getInd();
+
 private:
     int node;
+
 
 protected:
     std::vector<Tree*> children;
