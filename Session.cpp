@@ -93,6 +93,7 @@ const Graph& Session::getGraph() const
 {
     return g;
 }
+Graph& Session::changeGraph() {return g;}
 
 int Session::getCycle() const {
     return cycle;
