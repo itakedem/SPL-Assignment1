@@ -17,7 +17,7 @@ Agent *ContactTracer::clone() const {
 
 void ContactTracer::act(Session& session)
 {
-    return;
+
 }
 
 

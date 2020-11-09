@@ -85,13 +85,18 @@ int Session::dequeueInfected()
     return 0;
 }
 
-TreeType Session::getTreeType() const  {return treeType;}
+TreeType Session::getTreeType() const {
+    return treeType;
+}
 
-const Graph& Session::getGraph() const {return g;}
+const Graph& Session::getGraph() const
+{
+    return g;
+}
 
-Graph& Session::changeGraph() {return g;}
-
-int Session::getCycle() const {return cycle;}
+int Session::getCycle() const {
+    return cycle;
+}
 
 
 

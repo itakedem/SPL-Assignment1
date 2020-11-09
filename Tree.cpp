@@ -60,6 +60,12 @@ void Tree::BFSRun(Tree* parent, vector<int> added, const Session &session)
 
 void Tree::addChild(const Tree &child)
 {
+    Tree* copyChild = child.clone();
+    addChild(copyChild);
+}
+
+void Tree::addChild(Tree *child)
+{
     children.push_back(child);
 }
 
@@ -67,6 +73,8 @@ int Tree::getInd()
 {
     return node;
 }
+
+
 
 /********   a*************** CycleTree **********************/
 

@@ -23,6 +23,9 @@ public:
     Session(const string& path);
     Session(const Session& other);
     const Session& operator=(const Session& other);
+
+
+
     void simulate();
     void addAgent(const Agent& agent);
     void setGraph(const Graph& graph);
