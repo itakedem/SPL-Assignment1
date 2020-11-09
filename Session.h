@@ -6,6 +6,7 @@
 #include <string>
 #include "Graph.h"
 
+
 using json = nlohmann::json;
 using namespace std;
 
@@ -21,6 +22,10 @@ class Session{
 public:
     Session(const string& path);
     Session(const Session& other);
+    const Session& operator=(const Session& other);
+
+
+
     void simulate();
     void addAgent(const Agent& agent);
     void setGraph(const Graph& graph);
@@ -36,6 +41,7 @@ private:
     std::vector<Agent*> agents;
     int cycle;
     vector<int> infectedQueue;
+    void clearAgents();
 
 };
 

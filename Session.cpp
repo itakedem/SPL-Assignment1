@@ -35,6 +35,30 @@ Session::Session(const Session &other): g(other.g), treeType(other.getTreeType()
     infectedQueue = other.infectedQueue;
 }
 
+const Session &Session::operator=(const Session &other){
+    if(this!=&other){
+        g = other.g;
+        treeType = other.treeType;
+        clearAgents();
+        for(Agent* agent: other.agents)
+            agents.push_back(agent->clone());
+        cycle = other.cycle;
+        infectedQueue.clear();
+        infectedQueue = other.infectedQueue;
+    }
+    return *this;
+}
+void Session::clearAgents()
+{
+    for(Agent* agent: agents)
+    {
+        if(agent)
+        delete agent;
+    }
+}
+
+
+
 void Session::simulate()
 {
 
@@ -72,6 +96,8 @@ Graph& Session::getGraph()
 int Session::getCycle() const {
     return cycle;
 }
+
+
 
 
 
