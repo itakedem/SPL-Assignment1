@@ -58,8 +58,9 @@ void Tree::BFSRun(Tree* parent, vector<int> added, const Session &session)
     }
 }
 
-void Tree::addChild(const Tree &child) {
-
+void Tree::addChild(const Tree &child)
+{
+    children.push_back(child);
 }
 
 int Tree::getInd()

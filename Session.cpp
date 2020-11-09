@@ -88,9 +88,9 @@ TreeType Session::getTreeType() const {
     return treeType;
 }
 
-Graph& Session::getGraph() const
+const Graph& Session::getGraph() const
 {
-    return g;           //needs to send reference!!!!!
+    return g;
 }
 
 int Session::getCycle() const {
