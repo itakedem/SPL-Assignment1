@@ -80,7 +80,8 @@ void Session::enqueueInfected(int) {
 
 }
 
-int Session::dequeueInfected() {
+int Session::dequeueInfected()
+{
     return 0;
 }
 
