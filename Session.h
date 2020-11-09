@@ -30,6 +30,7 @@ public:
     int dequeueInfected();
     TreeType getTreeType() const;
     const Graph& getGraph() const;
+    Graph& changeGraph();
     int getCycle() const;
 
 private:

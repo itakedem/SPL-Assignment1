@@ -40,7 +40,7 @@ void Virus::act(Session &session)
 {
     if (!this->active)
         return;
-    Graph& graph = session.getGraph();
+    Graph graph = session.changeGraph();
     if (!graph.isInfected(nodeInd))
         {graph.infectNode(nodeInd);}
     int nextNode = nextNodeToInfect(nodeInd,graph);
