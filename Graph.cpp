@@ -8,19 +8,34 @@ Graph::Graph(vector<vector<int>> matrix): edges(move(matrix))
 {
     for (int i = 0; i<matrix.size(); i++)
         nodesStat.push_back(0); //all nodes are healthy at initiate
-} //need to delete edges???
+}
 
+
+Graph::Graph() = default;
 
 Graph::Graph(Graph *pGraph)
 {
     edges = (*pGraph).edges, nodesStat = (*pGraph).nodesStat;
 }
 
-Graph::Graph() = default;
 
 
 
+const vector<vector<int>> &Graph::getEdges() {
+    return edges;
+}
 
+int Graph::amountNeighbors(int nodeInd)
+{
+    int amount = 0;
+    for(int i = 0; i<edges.size(); i++)
+    {
+        if(edges[nodeInd][i]==0)
+            amount +=1;
+    }
+
+    return amount;
+}
 
 
 void Graph::infectNode(int nodeInd)
@@ -34,10 +49,7 @@ bool Graph::isInfected(int nodeInd)
     return nodesStat[nodeInd] == 1;
 }
 
-const vector<vector<int>>& Graph::getEdges()
-{
-    return edges;
-}
+
 
 
 
