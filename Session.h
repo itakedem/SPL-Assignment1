@@ -32,7 +32,7 @@ public:
     void enqueueInfected(int);
     int dequeueInfected();
     TreeType getTreeType() const;
-    Graph& getGraph();
+    Graph& getGraph() const;
     int getCycle() const;
 
 private:
