@@ -106,7 +106,7 @@ Tree *MaxRankTree::clone() const {
 RootTree::RootTree(int rootLabel):Tree(rootLabel) {}
 
 int RootTree::traceTree() {
-    return 0;
+    return this->getInd();
 }
 
 Tree *RootTree::clone() const {
