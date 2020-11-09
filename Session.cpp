@@ -53,7 +53,7 @@ void Session::clearAgents()
     for(Agent* agent: agents)
     {
         if(agent)
-        delete agent;
+            delete agent;
     }
 }
 
@@ -76,13 +76,15 @@ void Session::setGraph(const Graph &graph) {
 
 }
 
-void Session::enqueueInfected(int) {
-
+void Session::enqueueInfected(int nodeInd) {
+    infectedQueue.push_back(nodeInd);
 }
 
 int Session::dequeueInfected()
 {
-    return 0;
+    int infect = infectedQueue[0];
+    infectedQueue.erase(infectedQueue.begin());
+    return infect;
 }
 
 TreeType Session::getTreeType() const {
