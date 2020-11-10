@@ -10,7 +10,7 @@ public:
     Tree(int rootLabel);
     Tree(const Tree& other);
     ~Tree();
-
+    Tree& operator=(const Tree& other);
     virtual Tree* clone() const = 0;
     void addChild(const Tree& child);
     void addChild(Tree* child);
@@ -26,7 +26,6 @@ public:
 
 private:
     int node;
-    void BFSRun(Tree& parent,vector<int>& added, const Session& session);
 
 
 protected:

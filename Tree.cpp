@@ -26,6 +26,19 @@ void Tree::clear()
     }
 }
 
+Tree &Tree::operator=(const Tree& other)
+{
+    if (this != &other)
+    {
+        clear();
+        for (Tree* tree: other.children)
+        {
+            children.push_back(tree->clone());
+        }
+        node = other.node;
+    }
+}
+
 Tree *Tree::createTree(const Session &session, int rootLabel) {
     TreeType treeType = session.getTreeType();
     if(treeType == Cycle)
