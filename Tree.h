@@ -21,11 +21,11 @@ public:
     bool hasChildren();
     Tree& getNextLeft();
     int numOfChildren();
-    void fillingNodes(vector<Tree*> nodes);
+    void fillingNodes(vector<Tree*>& nodes);
 
 private:
     int node;
-    void BFSRun(Tree& parent,vector<int> added, const Session& session);
+    void BFSRun(Tree& parent,vector<int>& added, const Session& session);
 
 
 protected:

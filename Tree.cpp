@@ -25,7 +25,7 @@ Tree *Tree::createTree(const Session &session, int rootLabel) {
     else
         return new RootTree(rootLabel);
 }
-
+/*
 void Tree::BFS(Session &session)
 {
     vector<int> added;
@@ -39,7 +39,7 @@ void Tree::BFS(Session &session)
     BFSRun(*this,added,session);
 }
 
-void Tree::BFSRun(Tree& parent, vector<int> added, const Session &session)
+void Tree::BFSRun(Tree& parent, vector<int>& added, const Session &session)
 {
     const vector<vector<int>> &edges = session.getGraph().getEdges();
     for (int neigh=0; neigh<edges.size(); neigh++)
@@ -52,8 +52,35 @@ void Tree::BFSRun(Tree& parent, vector<int> added, const Session &session)
         if (added[neigh] == parent.getInd())
         {
             Tree* tempTree = createTree(session,neigh);
-            parent.addChild(*tempTree);
+            parent.addChild(tempTree);
             BFSRun(*tempTree,added,session);
+        }
+    }
+}*/
+
+void Tree::BFS(Session& session)
+{
+    const vector<vector<int>>& edges = session.getGraph().getEdges();
+    vector<int> added;
+    for (int i=0; i<edges.size(); i++)
+        added.push_back(0);
+    added[node] = 1;
+    vector<Tree*> trees;
+    trees.push_back(this);
+    while (!trees.empty())
+    {
+        Tree* tree = trees[0];
+        trees.erase(trees.cbegin());
+        int ind = tree->getInd();
+        for (int i=0;  i<edges.size(); i++)
+        {
+            if (edges[ind][i] == 1 & added[i] == 0)
+            {
+                Tree* newTree = createTree(session, i);
+                tree->addChild(newTree);
+                added[i] = 1;
+                trees.push_back(newTree);
+            }
         }
     }
 }
@@ -126,7 +153,7 @@ int MaxRankTree::traceTree()
     return max[0];
 }
 
-void Tree::fillingNodes(vector<Tree*> nodes)
+void Tree::fillingNodes(vector<Tree*>& nodes)
 {
     for (Tree* tree: this->children)
         nodes.push_back(tree);

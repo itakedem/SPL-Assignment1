@@ -1,6 +1,5 @@
 #include "Graph.h"
 #include <utility>
-#include <iostream>
 using namespace std;
 
 
@@ -46,10 +45,14 @@ void Graph::infectNode(int nodeInd)
     nodesStat[nodeInd] = 1;
 }
 
-bool Graph::isInfected(int nodeInd)
+void Graph::CoVIDNode(int nodeInd)
 {
-   return nodesStat[nodeInd] == 1;
+    nodesStat[nodeInd] = 2;
 }
+
+bool Graph::isInfected(int nodeInd){return nodesStat[nodeInd] == 1;}
+
+bool Graph::isCoVIDed(int nodeInd) {return nodesStat[nodeInd] == 2;}
 
 void Graph::detach(int nodeInd) {
     for(int i = 0; i<edges.size(); i++)

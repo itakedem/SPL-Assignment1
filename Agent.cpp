@@ -58,6 +58,7 @@ void Virus::act(Session &session)
     {
         Virus *newVirus = new Virus(nextNode);         //do we need to delete???
         session.addAgent(*newVirus);        //why we need * and not &?
+        graph.CoVIDNode(nextNode);
         session.changeGraph().setNumActives(true);
     }
     else
@@ -73,10 +74,10 @@ int Virus::nextNodeToInfect(int ind, Graph &graph)
     const vector<vector<int>>& edges = graph.getEdges();
     for (int i=0; i<edges.size(); i++)
     {
-        int edge = edges[ind][i];
-        if (edge == 1)              //means there's an edge between ind and i
-            if (!graph.isInfected(edge))
-                return edge;
+        int hasEdge = edges[ind][i];
+        if (hasEdge == 1)              //means there's an edge between ind and i
+            if (!graph.isInfected(i) & !graph.isCoVIDed(i))
+                return i;
     }
     return -1;
 }
