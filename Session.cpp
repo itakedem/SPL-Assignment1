@@ -151,8 +151,7 @@ void Session::output()
 {
     json j;
     j["graph"] = g;
-    vector<int> infected;
-    vector<int>
+    vector<int> infected = g.;
     for(int i=0; i<g.getEdges().size(); i++)
     {
         if()

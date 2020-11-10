@@ -61,6 +61,10 @@ bool Graph::isSatisfied() {
     return false;
 }
 
+const vector<int> &Graph::getNodeStat() {
+    return nodesStat;
+}
+
 
 
 
