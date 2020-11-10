@@ -13,6 +13,7 @@ public:
     int amountNeighbors(int nodeInd) const;
     void infectNode(int nodeInd);
     bool isInfected(int nodeInd);
+    void detach(int nodeInd);
 private:
     vector<vector<int>> edges;
     vector<int> nodesStat;

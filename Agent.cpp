@@ -17,7 +17,14 @@ Agent *ContactTracer::clone() const {
 
 void ContactTracer::act(Session& session)
 {
-
+    int infected = session.dequeueInfected();
+    if(infected != -1)
+    {
+        Tree *infectedT = Tree::createTree(session, infected);
+        infectedT->BFS(session);
+        int detach = infectedT->traceTree();
+        session.changeGraph().detach(detach);
+    }
 }
 
 

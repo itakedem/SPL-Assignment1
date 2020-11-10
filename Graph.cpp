@@ -50,6 +50,14 @@ bool Graph::isInfected(int nodeInd)
     return nodesStat[nodeInd] == 1;
 }
 
+void Graph::detach(int nodeInd) {
+    for(int i = 0; i<edges.size(); i++)
+    {
+        edges[i][nodeInd] = 0;
+        edges[nodeInd][i] = 0;
+    }
+}
+
 
 
 

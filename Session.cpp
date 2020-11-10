@@ -119,9 +119,13 @@ void Session::enqueueInfected(int nodeInd) {
 
 int Session::dequeueInfected()
 {
-    int infect = infectedQueue[0];
-    infectedQueue.erase(infectedQueue.begin());
-    return infect;
+    if(!infectedQueue.empty())
+    {
+        int infect = infectedQueue[0];
+        infectedQueue.erase(infectedQueue.begin());
+        return infect;
+    }
+    return -1;
 }
 
 TreeType Session::getTreeType() const {
