@@ -150,14 +150,11 @@ int Session::getCycle() const {
 void Session::output()
 {
     json j;
-    j["graph"] = g;
-    vector<int> infected = g.;
-    for(int i=0; i<g.getEdges().size(); i++)
-    {
-        if()
-    }
-
-
+    j["graph"] = g.getEdges();
+    const vector<int>& infected = g.getNodeStat();
+    j["infected"] = infected;
+    ofstream i("output.json");
+    j >> i;
 }
 
 
