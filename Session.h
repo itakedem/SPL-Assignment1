@@ -36,6 +36,8 @@ public:
     Graph& changeGraph();
     int getCycle() const;
     void output();
+    void TreeTypeJson(const string& type);
+    void AgentsJson(const vector<tuple<string,int>>& agent);
 
 private:
     Graph g;

@@ -15,23 +15,8 @@ Session::Session(const string& path): g()
     j << i;
     g = Graph(j["graph"]);
     cycle = 0;
-    string type = j["tree"];
-    if(type == "M")
-        treeType = MaxRank;
-    else if(type == "R")
-        treeType = Root;
-    else
-        treeType = Cycle;
-    for (auto agent: j["agents"]) //creates the vector of agents in the session, based on the json config file
-    {
-        if (agent[0] == "V")
-        {
-            agents.push_back(new Virus(agent[1]));
-            g.setNumActives(true);
-        }
-        else
-            agents.push_back(new ContactTracer());
-    }
+    TreeTypeJson(j["tree"]);
+    AgentsJson(j["agents"]);
 }
 
 Session::Session(const Session &other): g(other.g), treeType(other.getTreeType()), cycle(other.cycle)
@@ -163,6 +148,29 @@ void Session::output()
     j >> i;
 }
 
+
+void Session::TreeTypeJson(const string& type){
+
+    if(type == "M")
+        treeType = MaxRank;
+    else if(type == "R")
+        treeType = Root;
+    else
+        treeType = Cycle;
+}
+
+void Session::AgentsJson(const vector<tuple<string, int>>& agent) {
+    for (auto a: agent) //creates the vector of agents in the session, based on the json config file
+    {
+        if (get<0>(a) == "V")
+        {
+            agents.push_back(new Virus(get<1>(a)));
+            g.setNumActives(true);
+        }
+        else
+            agents.push_back(new ContactTracer());
+    }
+}
 
 
 
