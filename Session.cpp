@@ -8,13 +8,12 @@ using namespace std;
 using json = nlohmann::json;
 
 
-Session::Session(const string& path): g()
+Session::Session(const string& path): g(), treeType(Root) ,agents({}), cycle(0), infectedQueue()
 {
-    ifstream i(path);          //maybe need * maybe not
+    ifstream i(path);
     json j;
     j << i;
     g = Graph(j["graph"]);
-    cycle = 0;
     TreeTypeJson(j["tree"]);
     AgentsJson(j["agents"]);
 }
