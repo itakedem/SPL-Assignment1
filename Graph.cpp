@@ -14,10 +14,7 @@ Graph::Graph(vector<vector<int>> matrix): edges(move(matrix))
 
 Graph::Graph() = default;
 
-Graph::Graph(Graph *pGraph)
-{
-    edges = (*pGraph).edges, nodesStat = (*pGraph).nodesStat;
-}
+Graph::Graph(Graph *pGraph): edges(pGraph->edges), nodesStat(pGraph->nodesStat), illNodes(pGraph->illNodes), numActives(pGraph->numActives){}
 
 
 
@@ -43,6 +40,7 @@ int Graph::amountNeighbors(int nodeInd) const
 void Graph::infectNode(int nodeInd)
 {
     nodesStat[nodeInd] = 1;
+    illNodes.push_back(nodeInd);
 }
 
 void Graph::CoVIDNode(int nodeInd)
@@ -66,6 +64,8 @@ bool Graph::isSatisfied() {return numActives == 0;}
 
 const vector<int> &Graph::getNodeStat() {return nodesStat;}
 
+const vector<int> &Graph::getIllNodes() {return illNodes;}
+
 void Graph::setNumActives(bool raise)
 {
     if (raise)
@@ -73,6 +73,8 @@ void Graph::setNumActives(bool raise)
     else
         numActives--;
 }
+
+
 
 
 
