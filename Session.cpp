@@ -59,10 +59,7 @@ const Session &Session::operator=(const Session &other){
 }
 
 
-Session::~Session()
-{
-    clearAgents();
-}
+Session::~Session(){clearAgents();}
 
 Session::Session(Session &&session): g(session.g), treeType(session.treeType), agents(session.agents), cycle(session.cycle), infectedQueue(session.infectedQueue)
 {

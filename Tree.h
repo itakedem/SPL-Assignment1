@@ -9,7 +9,7 @@ class Tree{
 public:
     Tree(int rootLabel);
     Tree(const Tree& other);
-
+    ~Tree();
 
     virtual Tree* clone() const = 0;
     void addChild(const Tree& child);
@@ -22,6 +22,7 @@ public:
     Tree& getNextLeft();
     int numOfChildren();
     void fillingNodes(vector<Tree*>& nodes);
+    void clear();
 
 private:
     int node;
