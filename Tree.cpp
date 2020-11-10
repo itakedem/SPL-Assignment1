@@ -75,13 +75,14 @@ int Tree::getInd()
 }
 bool Tree::hasChildren() {return !children.empty();}
 
-Tree* Tree::getNext() {return this->children[0];}
+Tree* Tree::getNextLeft() {return this->children[0];}
+int Tree::numOfChildren() {return this->children.size();}
 
 
 
 /********   a*************** CycleTree **********************/
 
-CycleTree::CycleTree(int rootLabel, int currCycle): Tree(rootLabel), currCycle(currCycle){}
+CycleTree::CycleTree(int rootLabel, int currCycle): Tree(rootLabel), currCycle(currCycle){depth = 0}
 
 int CycleTree::traceTree()
 {
@@ -92,7 +93,7 @@ int CycleTree::tracing(Tree* tree, int cycle)
 {
     if (cycle == 0 || !tree->hasChildren())
         return tree->getInd();
-    return tracing(tree->getNext(), cycle-1);
+    return tracing(tree->getNextLeft(), cycle-1);
 }
 
 
@@ -101,12 +102,37 @@ Tree *CycleTree::clone() const {
 }
 
 
-/*********************** MaxRenkTree **********************/
+/*********************** MaxRankTree **********************/
 
 MaxRankTree::MaxRankTree(int rootLabel):Tree(rootLabel) {}
-int MaxRankTree::traceTree() {
-    return 0;
+int MaxRankTree::traceTree()
+{
+    vector<int> max;
+    max.push_back(this->getInd());
+    max.push_back(this->numOfChildren());
+    vector<Tree*> nodes;
+    nodes.push_back(this);
+    for (Tree* tree: nodes)
+        tree->fillingNodes(nodes);
+
+    for (Tree* tree: nodes)
+    {
+        if (tree->numOfChildren() > max[1])
+        {
+            max[1] = tree->numOfChildren();
+            max[0] = tree->getInd();
+        }
+    }
+    return max[0];
 }
+
+void Tree::fillingNodes(vector<Tree*> nodes)
+{
+    for (Tree* tree: this->children)
+        nodes.push_back(tree);
+
+}
+
 
 Tree *MaxRankTree::clone() const {
     return new MaxRankTree(*this);

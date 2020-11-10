@@ -15,17 +15,20 @@ public:
     static Tree* createTree(const Session& session, int rootLabel);
     virtual int traceTree()=0;
     void BFS(Session& session);
-    void BFSRun(Tree* parent,vector<int> added, const Session& session);
     int getInd();
     bool hasChildren();
-    Tree* getNext();
+    Tree* getNextLeft();
+    int numOfChildren();
+    void fillingNodes(vector<Tree*> nodes);
 
 private:
     int node;
+    void BFSRun(Tree* parent,vector<int> added, const Session& session);
 
 
 protected:
     std::vector<Tree*> children;
+    int depth;
 };
 
 class CycleTree: public Tree{
@@ -43,6 +46,7 @@ public:
     MaxRankTree(int rootLabel);
     virtual Tree* clone() const;
     virtual int traceTree();
+
 };
 
 class RootTree: public Tree{
