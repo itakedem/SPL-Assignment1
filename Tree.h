@@ -17,6 +17,8 @@ public:
     void BFS(Session& session);
     void BFSRun(Tree* parent,vector<int> added, const Session& session);
     int getInd();
+    bool hasChildren();
+    Tree* getNext();
 
 private:
     int node;
@@ -31,6 +33,7 @@ public:
     CycleTree(int rootLabel, int currCycle);
     virtual Tree* clone() const;
     virtual int traceTree();
+    int tracing(Tree* tree, int cycle);
 private:
     int currCycle;
 };

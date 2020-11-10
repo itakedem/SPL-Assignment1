@@ -73,6 +73,9 @@ int Tree::getInd()
 {
     return node;
 }
+bool Tree::hasChildren() {return !children.empty();}
+
+Tree* Tree::getNext() {return this->children[0];}
 
 
 
@@ -80,9 +83,18 @@ int Tree::getInd()
 
 CycleTree::CycleTree(int rootLabel, int currCycle): Tree(rootLabel), currCycle(currCycle){}
 
-int CycleTree::traceTree() {
-    return 0;
+int CycleTree::traceTree()
+{
+    return tracing(this, currCycle);
 }
+
+int CycleTree::tracing(Tree* tree, int cycle)
+{
+    if (cycle == 0 || !tree->hasChildren())
+        return tree->getInd();
+    return tracing(tree->getNext(), cycle-1);
+}
+
 
 Tree *CycleTree::clone() const {
     return new CycleTree(*this);
