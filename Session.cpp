@@ -48,12 +48,49 @@ const Session &Session::operator=(const Session &other){
     }
     return *this;
 }
+
+
+Session::~Session()
+{
+    clearAgents();
+}
+
+Session::Session(Session &&session): g(session.g), treeType(session.treeType), agents(session.agents), cycle(session.cycle), infectedQueue(session.infectedQueue)
+{
+    for(Agent* agent:session.agents)
+        agent = nullptr;
+}
+
+Session &Session::operator=(Session &&other){
+    if(this!= &other)
+    {
+        g = other.g;
+        treeType = other.treeType;
+        clearAgents();
+        for(Agent* agent: other.agents)
+            agents.push_back(agent);
+        cycle = other.cycle;
+        infectedQueue.clear();
+        infectedQueue = other.infectedQueue;
+        for(Agent* agent:other.agents)
+            agent = nullptr;
+    }
+    return *this;
+}
+
+
+
+
+
 void Session::clearAgents()
 {
     for(Agent* agent: agents)
     {
-        if(agent)
+        if(agent!= nullptr)
+        {
             delete agent;
+            agent = nullptr;
+        }
     }
 }
 
@@ -82,9 +119,13 @@ void Session::enqueueInfected(int nodeInd) {
 
 int Session::dequeueInfected()
 {
-    int infect = infectedQueue[0];
-    infectedQueue.erase(infectedQueue.begin());
-    return infect;
+    if(!infectedQueue.empty())
+    {
+        int infect = infectedQueue[0];
+        infectedQueue.erase(infectedQueue.begin());
+        return infect;
+    }
+    return -1;
 }
 
 TreeType Session::getTreeType() const {
@@ -100,6 +141,12 @@ Graph& Session::changeGraph() {return g;}
 int Session::getCycle() const {
     return cycle;
 }
+
+
+
+
+
+
 
 
 
