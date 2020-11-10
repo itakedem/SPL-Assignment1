@@ -19,23 +19,21 @@ Session::Session(const string& path): g()
     AgentsJson(j["agents"]);
 }
 
-Session::Session(const Session &other): g(other.g), treeType(other.getTreeType()), cycle(other.cycle)
+//copy constructor
+Session::Session(const Session &other): g(other.getGraph()), treeType(other.getTreeType()), agents({}), cycle(other.cycle), infectedQueue(other.infectedQueue)
 {
     for(int i=0;i<other.agents.size();i++)
-    {
-        Agent* newAgent = other.agents[i]->clone();
-        agents.push_back(newAgent);
-    }
-    infectedQueue = other.infectedQueue;
+        addAgent(*other.agents[i]);
 }
 
+//assignment operator
 const Session &Session::operator=(const Session &other){
     if(this!=&other){
         g = other.g;
         treeType = other.treeType;
         clearAgents();
         for(Agent* agent: other.agents)
-            agents.push_back(agent->clone());
+            addAgent(*agent);
         cycle = other.cycle;
         infectedQueue.clear();
         infectedQueue = other.infectedQueue;
@@ -43,15 +41,18 @@ const Session &Session::operator=(const Session &other){
     return *this;
 }
 
-
+//destructor
 Session::~Session(){clearAgents();}
 
+
+//move constructor
 Session::Session(Session &&session): g(session.g), treeType(session.treeType), agents(session.agents), cycle(session.cycle), infectedQueue(session.infectedQueue)
 {
     for(Agent* agent:session.agents)
         agent = nullptr;
 }
 
+//move assignment operator
 Session &Session::operator=(Session &&other){
     if(this!= &other)
     {
