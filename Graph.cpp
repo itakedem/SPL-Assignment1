@@ -42,7 +42,6 @@ int Graph::amountNeighbors(int nodeInd) const
 void Graph::infectNode(int nodeInd)
 {
     nodesStat[nodeInd] = 1;
-                                    //need to add to infectedQueue
 }
 
 bool Graph::isInfected(int nodeInd)
