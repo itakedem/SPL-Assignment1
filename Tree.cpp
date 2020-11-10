@@ -111,7 +111,7 @@ Tree *CycleTree::clone() const {return new CycleTree(*this);}
 
 /*********************** MaxRankTree **********************/
 
-MaxRankTree::MaxRankTree(int rootLabel):Tree(rootLabel) {}
+MaxRankTree::MaxRankTree(int rootLabel):Tree(rootLabel) {}/*
 int MaxRankTree::traceTree()
 {
     vector<int> max;
@@ -131,12 +131,34 @@ int MaxRankTree::traceTree()
         }
     }
     return max[0];
+}*/
+
+int MaxRankTree::traceTree()
+{
+    vector<int> max;
+    max.push_back(this->getInd());
+    max.push_back(this->numOfChildren());
+    vector<Tree*> nodes;
+    nodes.push_back(this);
+    while(!nodes.empty())
+    {
+        Tree* tree = nodes[0];
+        nodes.erase(nodes.cbegin());
+        fillingNodes(nodes,tree);
+        if (tree->numOfChildren() > max[1])
+        {
+            max[1] = tree->numOfChildren();
+            max[0] = tree->getInd();
+        }
+    }
+    return max[0];
 }
 
-void Tree::fillingNodes(vector<Tree*>& nodes)
+
+void Tree::fillingNodes(vector<Tree*>& nodes, Tree* tree)
 {
-    for (Tree* tree: this->children)
-        nodes.push_back(tree);
+    for (Tree* child: tree->children)
+        nodes.push_back(child);
 
 }
 

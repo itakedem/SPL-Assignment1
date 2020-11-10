@@ -21,7 +21,7 @@ public:
     bool hasChildren();
     Tree& getNextLeft();
     int numOfChildren();
-    void fillingNodes(vector<Tree*>& nodes);
+    void fillingNodes(vector<Tree*>& nodes,Tree* tree);
     void clear();
 
 private:
