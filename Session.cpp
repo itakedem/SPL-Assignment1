@@ -15,7 +15,13 @@ Session::Session(const string& path):g()
     j << i;
     g = Graph(j["graph"]);
     cycle = 0;
-    treeType = j["tree"];
+    string type = j["tree"];
+    if(type == "M")
+        treeType = MaxRank;
+    else if(type == "R")
+        treeType = Root;
+    else
+        treeType = Cycle;
     for (auto agent: j["agents"]) //creates the vector of agents in the session, based on the json config file
     {
         if (agent[0] == "V")
@@ -163,7 +169,7 @@ void Session::output()
             infected.push_back(i);
     }
     j["infected"] = infected;
-    ofstream i("output.json");
+    ofstream i("outputTest.json");
     j >> i;
 }
 

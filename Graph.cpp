@@ -1,12 +1,14 @@
 #include "Graph.h"
 #include <utility>
+#include <iostream>
 using namespace std;
+
 
 
 
 Graph::Graph(vector<vector<int>> matrix): edges(move(matrix))
 {
-    for (int i = 0; i<matrix.size(); i++)
+    for (int i = 0; i<edges.size(); i++)
         nodesStat.push_back(0); //all nodes are healthy at initiate
 }
 
@@ -46,7 +48,7 @@ void Graph::infectNode(int nodeInd)
 
 bool Graph::isInfected(int nodeInd)
 {
-    return nodesStat[nodeInd] == 1;
+   return nodesStat[nodeInd] == 1;
 }
 
 void Graph::detach(int nodeInd) {
