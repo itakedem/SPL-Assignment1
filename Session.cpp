@@ -19,7 +19,10 @@ Session::Session(const string& path):g()
     for (auto agent: j["agents"]) //creates the vector of agents in the session, based on the json config file
     {
         if (agent[0] == "V")
+        {
             agents.push_back(new Virus(agent[1]));
+            g.setNumActives(true);
+        }
         else
             agents.push_back(new ContactTracer());
     }

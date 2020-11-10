@@ -16,9 +16,13 @@ public:
     void detach(int nodeInd);
     bool isSatisfied();
     const vector<int>& getNodeStat();
+
+    void setNumActives(bool raise);
+
 private:
     vector<vector<int>> edges;
-    vector<int> nodesStat;
+    vector<int> nodesStat;          // if
+    int numActives;                 //how many active viruses we have
 };
 
 #endif

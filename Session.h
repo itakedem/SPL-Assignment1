@@ -26,8 +26,6 @@ public:
     ~Session();
     Session(Session&& session);
     Session& operator=(Session&& other);
-
-
     void simulate();
     void addAgent(const Agent& agent);
     void setGraph(const Graph& graph);
@@ -46,6 +44,7 @@ private:
     int cycle;
     vector<int> infectedQueue;
     void clearAgents();
+
 
 };
 

@@ -57,14 +57,17 @@ void Graph::detach(int nodeInd) {
     }
 }
 
-bool Graph::isSatisfied() {
-    return false;
-}
+bool Graph::isSatisfied() {return numActives == 0;}
 
-const vector<int> &Graph::getNodeStat() {
-    return nodesStat;
-}
+const vector<int> &Graph::getNodeStat() {return nodesStat;}
 
+void Graph::setNumActives(bool raise)
+{
+    if (raise)
+        numActives++;
+    else
+        numActives--;
+}
 
 
 

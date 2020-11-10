@@ -58,9 +58,13 @@ void Virus::act(Session &session)
     {
         Virus *newVirus = new Virus(nextNode);         //do we need to delete???
         session.addAgent(*newVirus);        //why we need * and not &?
+        session.changeGraph().setNumActives(true);
     }
     else
+    {
         this->active= false;
+        session.changeGraph().setNumActives(false);
+    }
 }
 
 
