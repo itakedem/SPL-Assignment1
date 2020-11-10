@@ -48,12 +48,49 @@ const Session &Session::operator=(const Session &other){
     }
     return *this;
 }
+
+
+Session::~Session()
+{
+    clearAgents();
+}
+
+Session::Session(Session &&session): g(session.g), treeType(session.treeType), agents(session.agents), cycle(session.cycle), infectedQueue(session.infectedQueue)
+{
+    for(Agent* agent:session.agents)
+        agent = nullptr;
+}
+
+Session &Session::operator=(Session &&other){
+    if(this!= &other)
+    {
+        g = other.g;
+        treeType = other.treeType;
+        clearAgents();
+        for(Agent* agent: other.agents)
+            agents.push_back(agent);
+        cycle = other.cycle;
+        infectedQueue.clear();
+        infectedQueue = other.infectedQueue;
+        for(Agent* agent:other.agents)
+            agent = nullptr;
+    }
+    return *this;
+}
+
+
+
+
+
 void Session::clearAgents()
 {
     for(Agent* agent: agents)
     {
-        if(agent)
+        if(agent!= nullptr)
+        {
             delete agent;
+            agent = nullptr;
+        }
     }
 }
 
@@ -100,6 +137,12 @@ Graph& Session::changeGraph() {return g;}
 int Session::getCycle() const {
     return cycle;
 }
+
+
+
+
+
+
 
 
 
