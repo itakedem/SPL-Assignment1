@@ -8,7 +8,7 @@ using namespace std;
 using json = nlohmann::json;
 
 
-Session::Session(const string& path):g()
+Session::Session(const string& path): g()
 {
     ifstream i(path);          //maybe need * maybe not
     json j;
