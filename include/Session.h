@@ -1,10 +1,10 @@
 #ifndef SESSION_H_
 #define SESSION_H_
 #include <fstream>
-#include "json.hpp"
+#include "include/json.hpp"
 #include <vector>
 #include <string>
-#include "Graph.h"
+#include "include/Graph.h"
 
 
 using json = nlohmann::json;

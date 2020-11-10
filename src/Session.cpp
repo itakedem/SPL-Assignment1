@@ -1,16 +1,17 @@
-#include "Session.h"
+#include "include/Session.h"
 #include <iostream>
 #include <fstream>
-#include "json.hpp"
-#include "Agent.h"
+#include "include/json.hpp"
+#include "include/Agent.h"
 
 using namespace std;
 using json = nlohmann::json;
 
 
+
 Session::Session(const string& path): g()
 {
-    ifstream i(path);          //maybe need * maybe not
+    ifstream i(path);
     json j;
     j << i;
     g = Graph(j["graph"]);
@@ -143,9 +144,9 @@ int Session::getCycle() const {
 void Session::output()
 {
     json j;
+    ofstream i("output.json");
     j["infected"] = g.getIllNodes();
     j["graph"] = g.getEdges();
-    ofstream i("output.json");
     j >> i;
 }
 

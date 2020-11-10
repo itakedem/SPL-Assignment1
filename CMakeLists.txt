@@ -6,15 +6,15 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(.)
 
 add_executable(SPL_Assignment1
-        Agent.cpp
-        Agent.h
+        src/Agent.cpp
+        include/Agent.h
         Configs/config.json
-        Graph.cpp
-        Graph.h
-        json.hpp
-        main.cpp
+        src/Graph.cpp
+        include/Graph.h
+        include/json.hpp
+        src/main.cpp
         output.json
-        Session.cpp
-        Session.h
-        Tree.cpp
-        Tree.h)
+        src/Session.cpp
+        include/Session.h
+        src/Tree.cpp
+        include/Tree.h)
