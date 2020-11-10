@@ -37,6 +37,21 @@ Tree &Tree::operator=(const Tree& other)
         }
         node = other.node;
     }
+}       //assignment operator
+
+Tree &Tree::operator=(Tree &other)                  //move operator
+{
+    if (this != &other)
+    {
+        clear();
+        node = other.node;
+        for (Tree* tree: other.children)
+        {
+            children.push_back(tree);
+            tree = nullptr;
+        }
+
+    }
 }
 
 Tree *Tree::createTree(const Session &session, int rootLabel) {
@@ -111,27 +126,7 @@ Tree *CycleTree::clone() const {return new CycleTree(*this);}
 
 /*********************** MaxRankTree **********************/
 
-MaxRankTree::MaxRankTree(int rootLabel):Tree(rootLabel) {}/*
-int MaxRankTree::traceTree()
-{
-    vector<int> max;
-    max.push_back(this->getInd());
-    max.push_back(this->numOfChildren());
-    vector<Tree*> nodes;
-    nodes.push_back(this);
-    for (Tree* tree: nodes)
-        tree->fillingNodes(nodes);
-
-    for (Tree* tree: nodes)
-    {
-        if (tree->numOfChildren() > max[1])
-        {
-            max[1] = tree->numOfChildren();
-            max[0] = tree->getInd();
-        }
-    }
-    return max[0];
-}*/
+MaxRankTree::MaxRankTree(int rootLabel):Tree(rootLabel) {}
 
 int MaxRankTree::traceTree()
 {
