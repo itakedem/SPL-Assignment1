@@ -49,7 +49,10 @@ void Virus::act(Session &session)
         return;
     Graph graph = session.changeGraph();
     if (!graph.isInfected(nodeInd))
-        {graph.infectNode(nodeInd);}
+        {
+            graph.infectNode(nodeInd);
+            session.enqueueInfected(nodeInd);
+        }
     int nextNode = nextNodeToInfect(nodeInd,graph);
     if (nextNode != -1)                     //-1 means no next node
     {

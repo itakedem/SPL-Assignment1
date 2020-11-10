@@ -14,6 +14,7 @@ public:
     void infectNode(int nodeInd);
     bool isInfected(int nodeInd);
     void detach(int nodeInd);
+    bool isSatisfied();
 private:
     vector<vector<int>> edges;
     vector<int> nodesStat;

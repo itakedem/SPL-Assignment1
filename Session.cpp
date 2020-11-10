@@ -98,9 +98,14 @@ void Session::clearAgents()
 
 void Session::simulate()
 {
-
-    //don't forget to update cycle field after each cycle
-
+    while(!g.isSatisfied())
+    {
+        int agentSize = agents.size();
+        for(int i = 0; i< agentSize; i++)
+            agents[i]->act(*this);
+        cycle++;
+    }
+    output();
 }
 
 void Session::addAgent(const Agent &agent)
@@ -140,6 +145,20 @@ Graph& Session::changeGraph() {return g;}
 
 int Session::getCycle() const {
     return cycle;
+}
+
+void Session::output()
+{
+    json j;
+    j["graph"] = g;
+    vector<int> infected;
+    vector<int>
+    for(int i=0; i<g.getEdges().size(); i++)
+    {
+        if()
+    }
+
+
 }
 
 

@@ -37,6 +37,7 @@ public:
     const Graph& getGraph() const;
     Graph& changeGraph();
     int getCycle() const;
+    void output();
 
 private:
     Graph g;

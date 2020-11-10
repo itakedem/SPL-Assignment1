@@ -58,6 +58,10 @@ void Graph::detach(int nodeInd) {
     }
 }
 
+bool Graph::isSatisfied() {
+    return false;
+}
+
 
 
 
