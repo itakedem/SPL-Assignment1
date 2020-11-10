@@ -30,7 +30,6 @@ private:
 
 protected:
     std::vector<Tree*> children;
-    int depth;
 };
 
 class CycleTree: public Tree{
