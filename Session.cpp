@@ -154,7 +154,13 @@ void Session::output()
 {
     json j;
     j["graph"] = g.getEdges();
-    const vector<int>& infected = g.getNodeStat();
+    const vector<int>& nodeStat = g.getNodeStat();
+    vector<int> infected;
+    for(int i=0; i<nodeStat.size();i++)
+    {
+        if(nodeStat[i]==1)
+            infected.push_back(i);
+    }
     j["infected"] = infected;
     ofstream i("output.json");
     j >> i;

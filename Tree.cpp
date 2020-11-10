@@ -36,24 +36,24 @@ void Tree::BFS(Session &session)
         else
             added.push_back(-1);
     }
-    BFSRun(this,added,session);
+    BFSRun(*this,added,session);
 }
 
-void Tree::BFSRun(Tree* parent, vector<int> added, const Session &session)
+void Tree::BFSRun(Tree& parent, vector<int> added, const Session &session)
 {
     const vector<vector<int>> &edges = session.getGraph().getEdges();
     for (int neigh=0; neigh<edges.size(); neigh++)
     {
-        if (edges[parent->getInd()][neigh] == 1 & added[neigh] == -1)
-            added[neigh] = parent->getInd();
+        if (edges[parent.getInd()][neigh] == 1 & added[neigh] == -1)
+            added[neigh] = parent.getInd();
     }
     for (int neigh=0; neigh<edges.size(); neigh++)
     {
-        if (added[neigh] == parent->getInd())
+        if (added[neigh] == parent.getInd())
         {
             Tree* tempTree = createTree(session,neigh);
-            parent->addChild(*tempTree);
-            BFSRun(tempTree,added,session);
+            parent.addChild(*tempTree);
+            BFSRun(*tempTree,added,session);
         }
     }
 }
@@ -75,25 +75,25 @@ int Tree::getInd()
 }
 bool Tree::hasChildren() {return !children.empty();}
 
-Tree* Tree::getNextLeft() {return this->children[0];}
+Tree& Tree::getNextLeft() {return *this->children[0];}
 int Tree::numOfChildren() {return this->children.size();}
 
 
 
 /********   a*************** CycleTree **********************/
 
-CycleTree::CycleTree(int rootLabel, int currCycle): Tree(rootLabel), currCycle(currCycle){depth = 0}
+CycleTree::CycleTree(int rootLabel, int currCycle): Tree(rootLabel), currCycle(currCycle){}
 
 int CycleTree::traceTree()
 {
-    return tracing(this, currCycle);
+    return tracing(*this, currCycle);
 }
 
-int CycleTree::tracing(Tree* tree, int cycle)
+int CycleTree::tracing(Tree& tree, int cycle)
 {
-    if (cycle == 0 || !tree->hasChildren())
-        return tree->getInd();
-    return tracing(tree->getNextLeft(), cycle-1);
+    if (cycle == 0 || !tree.hasChildren())
+        return tree.getInd();
+    return tracing(tree.getNextLeft(), cycle-1);
 }
 
 

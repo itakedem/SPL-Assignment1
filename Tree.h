@@ -9,6 +9,8 @@ class Tree{
 public:
     Tree(int rootLabel);
     Tree(const Tree& other);
+
+
     virtual Tree* clone() const = 0;
     void addChild(const Tree& child);
     void addChild(Tree* child);
@@ -17,13 +19,13 @@ public:
     void BFS(Session& session);
     int getInd();
     bool hasChildren();
-    Tree* getNextLeft();
+    Tree& getNextLeft();
     int numOfChildren();
     void fillingNodes(vector<Tree*> nodes);
 
 private:
     int node;
-    void BFSRun(Tree* parent,vector<int> added, const Session& session);
+    void BFSRun(Tree& parent,vector<int> added, const Session& session);
 
 
 protected:
@@ -36,7 +38,7 @@ public:
     CycleTree(int rootLabel, int currCycle);
     virtual Tree* clone() const;
     virtual int traceTree();
-    int tracing(Tree* tree, int cycle);
+    int tracing(Tree& tree, int cycle);
 private:
     int currCycle;
 };
