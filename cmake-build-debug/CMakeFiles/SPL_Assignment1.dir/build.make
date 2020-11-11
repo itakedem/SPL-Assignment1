@@ -77,87 +77,87 @@ include CMakeFiles/SPL_Assignment1.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/SPL_Assignment1.dir/flags.make
 
-CMakeFiles/SPL_Assignment1.dir/Agent.cpp.o: CMakeFiles/SPL_Assignment1.dir/flags.make
-CMakeFiles/SPL_Assignment1.dir/Agent.cpp.o: ../Agent.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/itakedem/CLionProjects/SPL-Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SPL_Assignment1.dir/Agent.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SPL_Assignment1.dir/Agent.cpp.o -c /Users/itakedem/CLionProjects/SPL-Assignment1/Agent.cpp
+CMakeFiles/SPL_Assignment1.dir/src/Agent.cpp.o: CMakeFiles/SPL_Assignment1.dir/flags.make
+CMakeFiles/SPL_Assignment1.dir/src/Agent.cpp.o: ../src/Agent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/itakedem/CLionProjects/SPL-Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SPL_Assignment1.dir/src/Agent.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SPL_Assignment1.dir/src/Agent.cpp.o -c /Users/itakedem/CLionProjects/SPL-Assignment1/src/Agent.cpp
 
-CMakeFiles/SPL_Assignment1.dir/Agent.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SPL_Assignment1.dir/Agent.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/itakedem/CLionProjects/SPL-Assignment1/Agent.cpp > CMakeFiles/SPL_Assignment1.dir/Agent.cpp.i
+CMakeFiles/SPL_Assignment1.dir/src/Agent.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SPL_Assignment1.dir/src/Agent.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/itakedem/CLionProjects/SPL-Assignment1/src/Agent.cpp > CMakeFiles/SPL_Assignment1.dir/src/Agent.cpp.i
 
-CMakeFiles/SPL_Assignment1.dir/Agent.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SPL_Assignment1.dir/Agent.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/itakedem/CLionProjects/SPL-Assignment1/Agent.cpp -o CMakeFiles/SPL_Assignment1.dir/Agent.cpp.s
+CMakeFiles/SPL_Assignment1.dir/src/Agent.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SPL_Assignment1.dir/src/Agent.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/itakedem/CLionProjects/SPL-Assignment1/src/Agent.cpp -o CMakeFiles/SPL_Assignment1.dir/src/Agent.cpp.s
 
-CMakeFiles/SPL_Assignment1.dir/Graph.cpp.o: CMakeFiles/SPL_Assignment1.dir/flags.make
-CMakeFiles/SPL_Assignment1.dir/Graph.cpp.o: ../Graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/itakedem/CLionProjects/SPL-Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SPL_Assignment1.dir/Graph.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SPL_Assignment1.dir/Graph.cpp.o -c /Users/itakedem/CLionProjects/SPL-Assignment1/Graph.cpp
+CMakeFiles/SPL_Assignment1.dir/src/Graph.cpp.o: CMakeFiles/SPL_Assignment1.dir/flags.make
+CMakeFiles/SPL_Assignment1.dir/src/Graph.cpp.o: ../src/Graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/itakedem/CLionProjects/SPL-Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SPL_Assignment1.dir/src/Graph.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SPL_Assignment1.dir/src/Graph.cpp.o -c /Users/itakedem/CLionProjects/SPL-Assignment1/src/Graph.cpp
 
-CMakeFiles/SPL_Assignment1.dir/Graph.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SPL_Assignment1.dir/Graph.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/itakedem/CLionProjects/SPL-Assignment1/Graph.cpp > CMakeFiles/SPL_Assignment1.dir/Graph.cpp.i
+CMakeFiles/SPL_Assignment1.dir/src/Graph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SPL_Assignment1.dir/src/Graph.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/itakedem/CLionProjects/SPL-Assignment1/src/Graph.cpp > CMakeFiles/SPL_Assignment1.dir/src/Graph.cpp.i
 
-CMakeFiles/SPL_Assignment1.dir/Graph.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SPL_Assignment1.dir/Graph.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/itakedem/CLionProjects/SPL-Assignment1/Graph.cpp -o CMakeFiles/SPL_Assignment1.dir/Graph.cpp.s
+CMakeFiles/SPL_Assignment1.dir/src/Graph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SPL_Assignment1.dir/src/Graph.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/itakedem/CLionProjects/SPL-Assignment1/src/Graph.cpp -o CMakeFiles/SPL_Assignment1.dir/src/Graph.cpp.s
 
-CMakeFiles/SPL_Assignment1.dir/main.cpp.o: CMakeFiles/SPL_Assignment1.dir/flags.make
-CMakeFiles/SPL_Assignment1.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/itakedem/CLionProjects/SPL-Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SPL_Assignment1.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SPL_Assignment1.dir/main.cpp.o -c /Users/itakedem/CLionProjects/SPL-Assignment1/main.cpp
+CMakeFiles/SPL_Assignment1.dir/src/main.cpp.o: CMakeFiles/SPL_Assignment1.dir/flags.make
+CMakeFiles/SPL_Assignment1.dir/src/main.cpp.o: ../src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/itakedem/CLionProjects/SPL-Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SPL_Assignment1.dir/src/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SPL_Assignment1.dir/src/main.cpp.o -c /Users/itakedem/CLionProjects/SPL-Assignment1/src/main.cpp
 
-CMakeFiles/SPL_Assignment1.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SPL_Assignment1.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/itakedem/CLionProjects/SPL-Assignment1/main.cpp > CMakeFiles/SPL_Assignment1.dir/main.cpp.i
+CMakeFiles/SPL_Assignment1.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SPL_Assignment1.dir/src/main.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/itakedem/CLionProjects/SPL-Assignment1/src/main.cpp > CMakeFiles/SPL_Assignment1.dir/src/main.cpp.i
 
-CMakeFiles/SPL_Assignment1.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SPL_Assignment1.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/itakedem/CLionProjects/SPL-Assignment1/main.cpp -o CMakeFiles/SPL_Assignment1.dir/main.cpp.s
+CMakeFiles/SPL_Assignment1.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SPL_Assignment1.dir/src/main.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/itakedem/CLionProjects/SPL-Assignment1/src/main.cpp -o CMakeFiles/SPL_Assignment1.dir/src/main.cpp.s
 
-CMakeFiles/SPL_Assignment1.dir/Session.cpp.o: CMakeFiles/SPL_Assignment1.dir/flags.make
-CMakeFiles/SPL_Assignment1.dir/Session.cpp.o: ../Session.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/itakedem/CLionProjects/SPL-Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SPL_Assignment1.dir/Session.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SPL_Assignment1.dir/Session.cpp.o -c /Users/itakedem/CLionProjects/SPL-Assignment1/Session.cpp
+CMakeFiles/SPL_Assignment1.dir/src/Session.cpp.o: CMakeFiles/SPL_Assignment1.dir/flags.make
+CMakeFiles/SPL_Assignment1.dir/src/Session.cpp.o: ../src/Session.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/itakedem/CLionProjects/SPL-Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SPL_Assignment1.dir/src/Session.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SPL_Assignment1.dir/src/Session.cpp.o -c /Users/itakedem/CLionProjects/SPL-Assignment1/src/Session.cpp
 
-CMakeFiles/SPL_Assignment1.dir/Session.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SPL_Assignment1.dir/Session.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/itakedem/CLionProjects/SPL-Assignment1/Session.cpp > CMakeFiles/SPL_Assignment1.dir/Session.cpp.i
+CMakeFiles/SPL_Assignment1.dir/src/Session.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SPL_Assignment1.dir/src/Session.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/itakedem/CLionProjects/SPL-Assignment1/src/Session.cpp > CMakeFiles/SPL_Assignment1.dir/src/Session.cpp.i
 
-CMakeFiles/SPL_Assignment1.dir/Session.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SPL_Assignment1.dir/Session.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/itakedem/CLionProjects/SPL-Assignment1/Session.cpp -o CMakeFiles/SPL_Assignment1.dir/Session.cpp.s
+CMakeFiles/SPL_Assignment1.dir/src/Session.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SPL_Assignment1.dir/src/Session.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/itakedem/CLionProjects/SPL-Assignment1/src/Session.cpp -o CMakeFiles/SPL_Assignment1.dir/src/Session.cpp.s
 
-CMakeFiles/SPL_Assignment1.dir/Tree.cpp.o: CMakeFiles/SPL_Assignment1.dir/flags.make
-CMakeFiles/SPL_Assignment1.dir/Tree.cpp.o: ../Tree.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/itakedem/CLionProjects/SPL-Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SPL_Assignment1.dir/Tree.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SPL_Assignment1.dir/Tree.cpp.o -c /Users/itakedem/CLionProjects/SPL-Assignment1/Tree.cpp
+CMakeFiles/SPL_Assignment1.dir/src/Tree.cpp.o: CMakeFiles/SPL_Assignment1.dir/flags.make
+CMakeFiles/SPL_Assignment1.dir/src/Tree.cpp.o: ../src/Tree.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/itakedem/CLionProjects/SPL-Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SPL_Assignment1.dir/src/Tree.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SPL_Assignment1.dir/src/Tree.cpp.o -c /Users/itakedem/CLionProjects/SPL-Assignment1/src/Tree.cpp
 
-CMakeFiles/SPL_Assignment1.dir/Tree.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SPL_Assignment1.dir/Tree.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/itakedem/CLionProjects/SPL-Assignment1/Tree.cpp > CMakeFiles/SPL_Assignment1.dir/Tree.cpp.i
+CMakeFiles/SPL_Assignment1.dir/src/Tree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SPL_Assignment1.dir/src/Tree.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/itakedem/CLionProjects/SPL-Assignment1/src/Tree.cpp > CMakeFiles/SPL_Assignment1.dir/src/Tree.cpp.i
 
-CMakeFiles/SPL_Assignment1.dir/Tree.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SPL_Assignment1.dir/Tree.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/itakedem/CLionProjects/SPL-Assignment1/Tree.cpp -o CMakeFiles/SPL_Assignment1.dir/Tree.cpp.s
+CMakeFiles/SPL_Assignment1.dir/src/Tree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SPL_Assignment1.dir/src/Tree.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/itakedem/CLionProjects/SPL-Assignment1/src/Tree.cpp -o CMakeFiles/SPL_Assignment1.dir/src/Tree.cpp.s
 
 # Object files for target SPL_Assignment1
 SPL_Assignment1_OBJECTS = \
-"CMakeFiles/SPL_Assignment1.dir/Agent.cpp.o" \
-"CMakeFiles/SPL_Assignment1.dir/Graph.cpp.o" \
-"CMakeFiles/SPL_Assignment1.dir/main.cpp.o" \
-"CMakeFiles/SPL_Assignment1.dir/Session.cpp.o" \
-"CMakeFiles/SPL_Assignment1.dir/Tree.cpp.o"
+"CMakeFiles/SPL_Assignment1.dir/src/Agent.cpp.o" \
+"CMakeFiles/SPL_Assignment1.dir/src/Graph.cpp.o" \
+"CMakeFiles/SPL_Assignment1.dir/src/main.cpp.o" \
+"CMakeFiles/SPL_Assignment1.dir/src/Session.cpp.o" \
+"CMakeFiles/SPL_Assignment1.dir/src/Tree.cpp.o"
 
 # External object files for target SPL_Assignment1
 SPL_Assignment1_EXTERNAL_OBJECTS =
 
-SPL_Assignment1: CMakeFiles/SPL_Assignment1.dir/Agent.cpp.o
-SPL_Assignment1: CMakeFiles/SPL_Assignment1.dir/Graph.cpp.o
-SPL_Assignment1: CMakeFiles/SPL_Assignment1.dir/main.cpp.o
-SPL_Assignment1: CMakeFiles/SPL_Assignment1.dir/Session.cpp.o
-SPL_Assignment1: CMakeFiles/SPL_Assignment1.dir/Tree.cpp.o
+SPL_Assignment1: CMakeFiles/SPL_Assignment1.dir/src/Agent.cpp.o
+SPL_Assignment1: CMakeFiles/SPL_Assignment1.dir/src/Graph.cpp.o
+SPL_Assignment1: CMakeFiles/SPL_Assignment1.dir/src/main.cpp.o
+SPL_Assignment1: CMakeFiles/SPL_Assignment1.dir/src/Session.cpp.o
+SPL_Assignment1: CMakeFiles/SPL_Assignment1.dir/src/Tree.cpp.o
 SPL_Assignment1: CMakeFiles/SPL_Assignment1.dir/build.make
 SPL_Assignment1: CMakeFiles/SPL_Assignment1.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/itakedem/CLionProjects/SPL-Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable SPL_Assignment1"

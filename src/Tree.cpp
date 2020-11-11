@@ -1,6 +1,6 @@
-#include "include/Tree.h"
-#include "include/Session.h"
-#include "include/Graph.h"
+#include "../include/Tree.h"
+#include "../include/Session.h"
+#include "../include/Graph.h"
 using namespace std;
 
 

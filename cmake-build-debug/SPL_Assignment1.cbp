@@ -82,40 +82,40 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/Agent.cpp">
-			<Option target="SPL_Assignment1"/>
-		</Unit>
-		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/Agent.h">
-			<Option target="SPL_Assignment1"/>
-		</Unit>
 		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/Configs/config.json">
 			<Option target="SPL_Assignment1"/>
 		</Unit>
-		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/Graph.cpp">
+		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/include/Agent.h">
 			<Option target="SPL_Assignment1"/>
 		</Unit>
-		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/Graph.h">
+		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/include/Graph.h">
 			<Option target="SPL_Assignment1"/>
 		</Unit>
-		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/Session.cpp">
+		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/include/Session.h">
 			<Option target="SPL_Assignment1"/>
 		</Unit>
-		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/Session.h">
+		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/include/Tree.h">
 			<Option target="SPL_Assignment1"/>
 		</Unit>
-		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/Tree.cpp">
-			<Option target="SPL_Assignment1"/>
-		</Unit>
-		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/Tree.h">
-			<Option target="SPL_Assignment1"/>
-		</Unit>
-		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/json.hpp">
-			<Option target="SPL_Assignment1"/>
-		</Unit>
-		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/main.cpp">
+		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/include/json.hpp">
 			<Option target="SPL_Assignment1"/>
 		</Unit>
 		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/output.json">
+			<Option target="SPL_Assignment1"/>
+		</Unit>
+		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/src/Agent.cpp">
+			<Option target="SPL_Assignment1"/>
+		</Unit>
+		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/src/Graph.cpp">
+			<Option target="SPL_Assignment1"/>
+		</Unit>
+		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/src/Session.cpp">
+			<Option target="SPL_Assignment1"/>
+		</Unit>
+		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/src/Tree.cpp">
+			<Option target="SPL_Assignment1"/>
+		</Unit>
+		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/src/main.cpp">
 			<Option target="SPL_Assignment1"/>
 		</Unit>
 		<Unit filename="/Users/itakedem/CLionProjects/SPL-Assignment1/CMakeLists.txt">

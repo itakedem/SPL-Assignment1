@@ -1,8 +1,8 @@
-#include "include/Session.h"
+#include "../include/Session.h"
 #include <iostream>
 #include <fstream>
-#include "include/json.hpp"
-#include "include/Agent.h"
+#include "../include/json.hpp"
+#include "../include/Agent.h"
 
 using namespace std;
 using json = nlohmann::json;
