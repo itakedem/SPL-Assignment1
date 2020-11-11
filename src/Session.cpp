@@ -144,7 +144,7 @@ int Session::getCycle() const {
 void Session::output()
 {
     json j;
-    ofstream i("output.json");
+    ofstream i("./output.json");
     j["infected"] = g.getIllNodes();
     j["graph"] = g.getEdges();
     j >> i;
