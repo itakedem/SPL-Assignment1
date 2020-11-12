@@ -16,7 +16,4 @@ add_executable(SPL_Assignment1
         src/Session.cpp
         include/Session.h
         src/Tree.cpp
-        include/Tree.h
-        include/Tester.h
-        src/Tester.cpp
-        tests.json)
+        include/Tree.h)

@@ -18,11 +18,6 @@ CMakeFiles/SPL_Assignment1.dir/src/Session.cpp.o: ../include/Tree.h
 CMakeFiles/SPL_Assignment1.dir/src/Session.cpp.o: ../include/json.hpp
 CMakeFiles/SPL_Assignment1.dir/src/Session.cpp.o: ../src/Session.cpp
 
-CMakeFiles/SPL_Assignment1.dir/src/Tester.cpp.o: ../include/Graph.h
-CMakeFiles/SPL_Assignment1.dir/src/Tester.cpp.o: ../include/Session.h
-CMakeFiles/SPL_Assignment1.dir/src/Tester.cpp.o: ../include/Tester.h
-CMakeFiles/SPL_Assignment1.dir/src/Tester.cpp.o: ../include/json.hpp
-CMakeFiles/SPL_Assignment1.dir/src/Tester.cpp.o: ../src/Tester.cpp
 
 CMakeFiles/SPL_Assignment1.dir/src/Tree.cpp.o: ../include/Graph.h
 CMakeFiles/SPL_Assignment1.dir/src/Tree.cpp.o: ../include/Session.h
