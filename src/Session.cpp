@@ -12,8 +12,7 @@ using json = nlohmann::json;
 Session::Session(const string& path): g(), treeType(Root), agents({}), cycle(0), infectedQueue({})
 {
     ifstream i(path);
-    json j;
-    j << i;
+    json j = json::parse(i);
     g = Graph(j["graph"]);
     TreeTypeJson(j["tree"]);
     AgentsJson(j["agents"]);
@@ -46,10 +45,13 @@ Session::~Session(){clearAgents();}
 
 
 //move constructor
-Session::Session(Session &&session): g(session.g), treeType(session.treeType), agents(session.agents), cycle(session.cycle), infectedQueue(session.infectedQueue)
+Session::Session(Session &&session): g(session.g), treeType(session.treeType), agents({}), cycle(session.cycle), infectedQueue(session.infectedQueue)
 {
     for(Agent* agent:session.agents)
+    {
+        agents.push_back(agent);
         agent = nullptr;
+    }
     session.agents.clear();
 }
 
@@ -151,6 +153,7 @@ void Session::output()
     j["graph"] = g.getEdges();
     j >> i;
 }
+
 
 
 void Session::TreeTypeJson(const string& type){
