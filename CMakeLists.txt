@@ -8,7 +8,6 @@ include_directories(.)
 add_executable(SPL_Assignment1
         src/Agent.cpp
         include/Agent.h
-        Configs/config.json
         src/Graph.cpp
         include/Graph.h
         include/json.hpp
@@ -17,4 +16,7 @@ add_executable(SPL_Assignment1
         src/Session.cpp
         include/Session.h
         src/Tree.cpp
-        include/Tree.h)
+        include/Tree.h
+        include/Tester.h
+        src/Tester.cpp
+        tests.json)

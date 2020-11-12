@@ -61,12 +61,13 @@ Session &Session::operator=(Session &&other){
         treeType = other.treeType;
         clearAgents();
         for(Agent* agent: other.agents)
+        {
             agents.push_back(agent);
+            agent = nullptr;
+        }
         cycle = other.cycle;
         infectedQueue.clear();
         infectedQueue = other.infectedQueue;
-        for(Agent* agent:other.agents)
-            agent = nullptr;
     }
     return *this;
 }
@@ -167,6 +168,7 @@ void Session::AgentsJson(const vector<tuple<string, int>>& agent) {
         if (get<0>(a) == "V")
         {
             agents.push_back(new Virus(get<1>(a)));
+            g.CoVIDNode(get<1>(a));
             g.setNumActives(true);
         }
         else

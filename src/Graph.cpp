@@ -5,7 +5,7 @@ using namespace std;
 
 
 
-Graph::Graph(vector<vector<int>> matrix): edges(move(matrix))
+Graph::Graph(vector<vector<int>> matrix): edges(move(matrix)),numActives(0)
 {
     for (int i = 0; i<edges.size(); i++)
         nodesStat.push_back(0); //all nodes are healthy at initiate

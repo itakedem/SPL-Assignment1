@@ -59,19 +59,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /snap/clion/129/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /snap/clion/129/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/itakedem/CLionProjects/SPL-Assignment1
+CMAKE_SOURCE_DIR = /home/spl211/CLionProjects/SPL-Assignment1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/itakedem/CLionProjects/SPL-Assignment1/cmake-build-debug
+CMAKE_BINARY_DIR = /home/spl211/CLionProjects/SPL-Assignment1/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /Users/itakedem/CLionProjects/SPL-Assignment1/cmake-build-deb
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/129/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/129/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/itakedem/CLionProjects/SPL-Assignment1/cmake-build-debug/CMakeFiles /Users/itakedem/CLionProjects/SPL-Assignment1/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/spl211/CLionProjects/SPL-Assignment1/cmake-build-debug/CMakeFiles /home/spl211/CLionProjects/SPL-Assignment1/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/itakedem/CLionProjects/SPL-Assignment1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/spl211/CLionProjects/SPL-Assignment1/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -224,6 +224,33 @@ src/Session.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPL_Assignment1.dir/build.make CMakeFiles/SPL_Assignment1.dir/src/Session.cpp.s
 .PHONY : src/Session.cpp.s
 
+src/Tester.o: src/Tester.cpp.o
+
+.PHONY : src/Tester.o
+
+# target to build an object file
+src/Tester.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPL_Assignment1.dir/build.make CMakeFiles/SPL_Assignment1.dir/src/Tester.cpp.o
+.PHONY : src/Tester.cpp.o
+
+src/Tester.i: src/Tester.cpp.i
+
+.PHONY : src/Tester.i
+
+# target to preprocess a source file
+src/Tester.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPL_Assignment1.dir/build.make CMakeFiles/SPL_Assignment1.dir/src/Tester.cpp.i
+.PHONY : src/Tester.cpp.i
+
+src/Tester.s: src/Tester.cpp.s
+
+.PHONY : src/Tester.s
+
+# target to generate assembly for a file
+src/Tester.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPL_Assignment1.dir/build.make CMakeFiles/SPL_Assignment1.dir/src/Tester.cpp.s
+.PHONY : src/Tester.cpp.s
+
 src/Tree.o: src/Tree.cpp.o
 
 .PHONY : src/Tree.o
@@ -296,6 +323,9 @@ help:
 	@echo "... src/Session.o"
 	@echo "... src/Session.i"
 	@echo "... src/Session.s"
+	@echo "... src/Tester.o"
+	@echo "... src/Tester.i"
+	@echo "... src/Tester.s"
 	@echo "... src/Tree.o"
 	@echo "... src/Tree.i"
 	@echo "... src/Tree.s"

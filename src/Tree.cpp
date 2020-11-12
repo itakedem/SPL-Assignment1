@@ -22,7 +22,10 @@ void Tree::clear()
     for (Tree* tree: children)
     {
         if (tree != nullptr)
+        {
             delete tree;
+            tree = nullptr;
+        }
     }
 }
 
@@ -39,7 +42,7 @@ Tree &Tree::operator=(const Tree& other)
     }
 }       //assignment operator
 
-Tree &Tree::operator=(Tree &other)                  //move operator
+Tree &Tree::operator=(Tree &&other)                  //move operator
 {
     if (this != &other)
     {
@@ -156,6 +159,8 @@ void Tree::fillingNodes(vector<Tree*>& nodes, Tree* tree)
         nodes.push_back(child);
 
 }
+
+const vector<Tree *> &Tree::getChildren() const {return children;}
 
 
 Tree *MaxRankTree::clone() const {return new MaxRankTree(*this);}

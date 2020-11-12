@@ -11,7 +11,7 @@ public:
     Tree(const Tree& other);
     ~Tree();
     Tree& operator=(const Tree& other);
-    Tree& operator=(Tree& other);
+    Tree& operator=(Tree&& other);
     virtual Tree* clone() const = 0;
     void addChild(const Tree& child);
     void addChild(Tree* child);
@@ -24,6 +24,7 @@ public:
     int numOfChildren();
     void fillingNodes(vector<Tree*>& nodes,Tree* tree);
     void clear();
+    const vector<Tree*>& getChildren() const;
 
 private:
     int node;
