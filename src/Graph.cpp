@@ -5,14 +5,14 @@ using namespace std;
 
 
 
-Graph::Graph(vector<vector<int>> matrix): edges(move(matrix)),numActives(0)
+Graph::Graph(vector<vector<int>> matrix): edges(move(matrix)),nodesStat({}),illNodes({}),numActives(0)
 {
-    for (int i = 0; i<edges.size(); i++)
+    for (unsigned int i = 0; i<edges.size(); i++)
         nodesStat.push_back(0); //all nodes are healthy at initiate
 }
 
 
-Graph::Graph() = default;
+Graph::Graph():edges({}),nodesStat({}),illNodes({}),numActives(0){};
 
 Graph::Graph(Graph *pGraph): edges(pGraph->edges), nodesStat(pGraph->nodesStat), illNodes(pGraph->illNodes), numActives(pGraph->numActives){}
 
@@ -27,7 +27,7 @@ const vector<vector<int>> &Graph::getEdges() const
 int Graph::amountNeighbors(int nodeInd) const
 {
     int amount = 0;
-    for(int i = 0; i<edges.size(); i++)
+    for(unsigned int i = 0; i<edges.size(); i++)
     {
         if(edges[nodeInd][i]==0)
             amount +=1;
@@ -53,7 +53,7 @@ bool Graph::isInfected(int nodeInd){return nodesStat[nodeInd] == 1;}
 bool Graph::isCoVIDed(int nodeInd) {return nodesStat[nodeInd] == 2;}
 
 void Graph::detach(int nodeInd) {
-    for(int i = 0; i<edges.size(); i++)
+    for(unsigned int i = 0; i<edges.size(); i++)
     {
         edges[i][nodeInd] = 0;
         edges[nodeInd][i] = 0;

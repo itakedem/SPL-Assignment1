@@ -9,13 +9,12 @@ using json = nlohmann::json;
 
 
 
-Session::Session(const string& path): g()
+Session::Session(const string& path): g(), treeType(Root), agents({}), cycle(0), infectedQueue({})
 {
     ifstream i(path);
     json j;
     j << i;
     g = Graph(j["graph"]);
-    cycle = 0;
     TreeTypeJson(j["tree"]);
     AgentsJson(j["agents"]);
 }
@@ -23,7 +22,7 @@ Session::Session(const string& path): g()
 //copy constructor
 Session::Session(const Session &other): g(other.getGraph()), treeType(other.getTreeType()), agents({}), cycle(other.cycle), infectedQueue(other.infectedQueue)
 {
-    for(int i=0;i<other.agents.size();i++)
+    for(unsigned int i=0;i<other.agents.size();i++)
         addAgent(*other.agents[i]);
 }
 
@@ -51,6 +50,7 @@ Session::Session(Session &&session): g(session.g), treeType(session.treeType), a
 {
     for(Agent* agent:session.agents)
         agent = nullptr;
+    session.agents.clear();
 }
 
 //move assignment operator
@@ -65,6 +65,7 @@ Session &Session::operator=(Session &&other){
             agents.push_back(agent);
             agent = nullptr;
         }
+        other.agents.clear();
         cycle = other.cycle;
         infectedQueue.clear();
         infectedQueue = other.infectedQueue;

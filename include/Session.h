@@ -23,7 +23,7 @@ public:
     Session(const string& path);
     Session(const Session& other);
     const Session& operator=(const Session& other);
-    ~Session();
+    virtual ~Session();
     Session(Session&& session);
     Session& operator=(Session&& other);
     void simulate();

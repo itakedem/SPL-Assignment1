@@ -9,7 +9,7 @@ class Tree{
 public:
     Tree(int rootLabel);
     Tree(const Tree& other);
-    ~Tree();
+    virtual ~Tree();
     Tree& operator=(const Tree& other);
     Tree& operator=(Tree&& other);
     virtual Tree* clone() const = 0;

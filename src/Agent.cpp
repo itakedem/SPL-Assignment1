@@ -5,6 +5,7 @@ using namespace std;
 /*********************** Agent **********************/
 
 Agent::Agent() {}
+Agent::~Agent() {}
 
 /*********************** ContactTracer **********************/
 
@@ -24,6 +25,7 @@ void ContactTracer::act(Session& session)
         infectedT->BFS(session);
         int detach = infectedT->traceTree();
         session.changeGraph().detach(detach);
+        delete infectedT;
     }
 }
 
@@ -60,6 +62,7 @@ void Virus::act(Session &session)
         session.addAgent(*newVirus);        //why we need * and not &?
         graph.CoVIDNode(nextNode);
         session.changeGraph().setNumActives(true);
+        delete newVirus;
     }
     else
     {
@@ -72,7 +75,7 @@ void Virus::act(Session &session)
 int Virus::nextNodeToInfect(int ind, Graph &graph)
 {
     const vector<vector<int>>& edges = graph.getEdges();
-    for (int i=0; i<edges.size(); i++)
+    for (unsigned int i=0; i<edges.size(); i++)
     {
         int hasEdge = edges[ind][i];
         if (hasEdge == 1)              //means there's an edge between ind and i

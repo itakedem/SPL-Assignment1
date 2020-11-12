@@ -9,6 +9,7 @@ class Agent{
 public:
     Agent();
     //Agent(Agent *newAgent);
+    virtual ~Agent();
     virtual Agent* clone() const =0;
     virtual void act(Session& session)=0;
 

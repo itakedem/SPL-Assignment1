@@ -6,10 +6,10 @@ using namespace std;
 
 /*********************** Tree **********************/
 
-Tree::Tree(int rootLabel): node(rootLabel){}
+Tree::Tree(int rootLabel): node(rootLabel), children({}){}
 
-Tree::Tree(const Tree& other): node(other.node){
-    for(int i=0; i<other.children.size();i++){
+Tree::Tree(const Tree& other): node(other.node), children({}){
+    for(unsigned int i=0; i<other.children.size();i++){
         Tree* newTree = other.children[i]->clone();
         children.push_back(newTree);
     }
@@ -26,6 +26,7 @@ void Tree::clear()
             delete tree;
             tree = nullptr;
         }
+        children.clear();
     }
 }
 
@@ -40,6 +41,7 @@ Tree &Tree::operator=(const Tree& other)
         }
         node = other.node;
     }
+    return *this;
 }       //assignment operator
 
 Tree &Tree::operator=(Tree &&other)                  //move operator
@@ -53,8 +55,10 @@ Tree &Tree::operator=(Tree &&other)                  //move operator
             children.push_back(tree);
             tree = nullptr;
         }
+        other.children.clear();
 
     }
+    return *this;
 }
 
 Tree *Tree::createTree(const Session &session, int rootLabel) {
@@ -71,7 +75,7 @@ void Tree::BFS(Session& session)
 {
     const vector<vector<int>>& edges = session.getGraph().getEdges();
     vector<int> added;
-    for (int i=0; i<edges.size(); i++)
+    for (unsigned int i=0; i<edges.size(); i++)
         added.push_back(0);
     added[node] = 1;
     vector<Tree*> trees;
@@ -81,9 +85,9 @@ void Tree::BFS(Session& session)
         Tree* tree = trees[0];
         trees.erase(trees.cbegin());
         int ind = tree->getInd();
-        for (int i=0;  i<edges.size(); i++)
+        for (unsigned int i=0;  i<edges.size(); i++)
         {
-            if (edges[ind][i] == 1 & added[i] == 0)
+            if ((edges[ind][i] == 1) & (added[i] == 0))
             {
                 Tree* newTree = createTree(session, i);
                 tree->addChild(newTree);
