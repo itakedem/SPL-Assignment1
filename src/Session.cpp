@@ -12,7 +12,8 @@ using json = nlohmann::json;
 Session::Session(const string& path): g(), treeType(Root), agents({}), cycle(0), infectedQueue({})
 {
     ifstream i(path);
-    json j = json::parse(i);
+    json j;
+    i >> j;
     g = Graph(j["graph"]);
     TreeTypeJson(j["tree"]);
     AgentsJson(j["agents"]);
@@ -151,7 +152,7 @@ void Session::output()
     ofstream i("./output.json");
     j["infected"] = g.getIllNodes();
     j["graph"] = g.getEdges();
-    j >> i;
+    i << j;
 }
 
 
