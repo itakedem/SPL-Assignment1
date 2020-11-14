@@ -26,8 +26,8 @@ void Tree::clear()
             delete tree;
             tree = nullptr;
         }
-        children.clear();
     }
+    children.clear();
 }
 
 Tree &Tree::operator=(const Tree& other)
