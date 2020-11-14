@@ -90,6 +90,7 @@ void Session::clearAgents()
             agent = nullptr;
         }
     }
+    agents.clear();
 }
 
 
