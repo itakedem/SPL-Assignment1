@@ -20,11 +20,10 @@ Tree::Tree(Tree&& tree): node(tree.node), children({})
 {
     for(Tree* child: tree.children)
     {
-        children.push_back(child);
+        addChild(child);
         child = nullptr;
     }
     tree.children.clear();
-
 }
 
 
