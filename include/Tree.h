@@ -21,10 +21,9 @@ public:
     void BFS(Session& session);
     int getInd();
     bool hasChildren();
-    Tree& getNextLeft();
+    Tree& getNextLeft();        //returns the left most child (children[0])
     int numOfChildren();
-    void fillingNodes(vector<Tree*>& nodes,Tree* tree);
-    void clear();
+    void clear();               //clear children vector
     const vector<Tree*>& getChildren() const;
 
 private:
@@ -40,7 +39,7 @@ public:
     CycleTree(int rootLabel, int currCycle);
     virtual Tree* clone() const;
     virtual int traceTree();
-    int tracing(Tree& tree, int cycle);
+    int tracing(Tree& tree, int cycle);     //implementing traceTree()
 private:
     int currCycle;
 };
@@ -50,6 +49,7 @@ public:
     MaxRankTree(int rootLabel);
     virtual Tree* clone() const;
     virtual int traceTree();
+    void fillingNodes(vector<Tree*>& nodes,Tree* tree);         //inserts all tree children into node vector (used in traceTree() for fill our checking queue)
 
 };
 

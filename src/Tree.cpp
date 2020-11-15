@@ -170,7 +170,7 @@ int MaxRankTree::traceTree()
 }
 
 
-void Tree::fillingNodes(vector<Tree*>& nodes, Tree* tree)
+void MaxRankTree::fillingNodes(vector<Tree*>& nodes, Tree* tree)
 {
     for (Tree* child: tree->children)
         nodes.push_back(child);
