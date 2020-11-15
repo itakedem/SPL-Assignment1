@@ -10,7 +10,6 @@ public:
     Graph();
     Graph(Graph *pGraph);                           //copy constructor
     const vector<vector<int>>& getEdges() const;
-    int amountNeighbors(int nodeInd) const;
     void infectNode(int nodeInd);           //makes node infected
     void CoVIDNode(int nodeInd);            //makes node carrier
     bool isInfected(int nodeInd);

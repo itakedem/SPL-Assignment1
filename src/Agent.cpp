@@ -70,7 +70,7 @@ void Virus::act(Session &session)
     }
 }
 
-
+//finds the smallest index which is not infected
 int Virus::nextNodeToInfect(int ind, Graph &graph)
 {
     const vector<vector<int>>& edges = graph.getEdges();
@@ -78,7 +78,7 @@ int Virus::nextNodeToInfect(int ind, Graph &graph)
     {
         int hasEdge = edges[ind][i];
         if (hasEdge == 1)              //means there's an edge between ind and i
-            if (!graph.isInfected(i) & !graph.isCoVIDed(i))
+            if (!graph.isInfected(i) & !graph.isCoVIDed(i))     //checks if there's no virus on the node
                 return i;
     }
     return -1;

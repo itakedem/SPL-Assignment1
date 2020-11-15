@@ -12,41 +12,25 @@ Graph::Graph(vector<vector<int>> matrix): edges(move(matrix)),nodesStat({}),illN
 }
 
 
+//default constructor
 Graph::Graph():edges({}),nodesStat({}),illNodes({}),numActives(0){};
 
+//copy constructor
 Graph::Graph(Graph *pGraph): edges(pGraph->edges), nodesStat(pGraph->nodesStat), illNodes(pGraph->illNodes), numActives(pGraph->numActives){}
 
 
 
 
-const vector<vector<int>> &Graph::getEdges() const
-{
-    return edges;
-}
-
-int Graph::amountNeighbors(int nodeInd) const
-{
-    int amount = 0;
-    for(unsigned int i = 0; i<edges.size(); i++)
-    {
-        if(edges[nodeInd][i]==0)
-            amount +=1;
-    }
-
-    return amount;
-}
+const vector<vector<int>> &Graph::getEdges() const{return edges;}
 
 
 void Graph::infectNode(int nodeInd)
 {
     nodesStat[nodeInd] = 1;
-    illNodes.push_back(nodeInd);
+    illNodes.push_back(nodeInd);        //adds node to infected nodes
 }
 
-void Graph::CoVIDNode(int nodeInd)
-{
-    nodesStat[nodeInd] = 2;
-}
+void Graph::CoVIDNode(int nodeInd){nodesStat[nodeInd] = 2;}
 
 bool Graph::isInfected(int nodeInd){return nodesStat[nodeInd] == 1;}
 
