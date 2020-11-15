@@ -22,10 +22,10 @@ class Session{
 public:
     Session(const string& path);
     Session(const Session& other);
-    const Session& operator=(const Session& other);
-    virtual ~Session();
-    Session(Session&& session);
-    Session& operator=(Session&& other);
+    const Session& operator=(const Session& other); //assignment operator
+    virtual ~Session();                      //destructor
+    Session(Session&& session);             //move constructor
+    Session& operator=(Session&& other);    //move assignment operator
     void simulate();
     void addAgent(const Agent& agent);
     void setGraph(const Graph& graph);
@@ -33,11 +33,11 @@ public:
     int dequeueInfected();
     TreeType getTreeType() const;
     const Graph& getGraph() const;
-    Graph& changeGraph();
+    Graph& changeGraph();           //returns the graph with the ability to change the graph
     int getCycle() const;
-    void output();
-    void TreeTypeJson(const string& type);
-    void AgentsJson(const vector<tuple<string,int>>& agent);
+    void output();                  //creates the output file
+    void TreeTypeJson(const string& type);      //initiates the treeType from json
+    void AgentsJson(const vector<tuple<string,int>>& agent);    //initiates the agents from json
 
 private:
     Graph g;

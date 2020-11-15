@@ -8,10 +8,11 @@ class Session;
 class Tree{
 public:
     Tree(int rootLabel);
-    Tree(const Tree& other);
-    virtual ~Tree();
-    Tree& operator=(const Tree& other);
-    Tree& operator=(Tree&& other);
+    Tree(const Tree& other);        //copy constructor
+    virtual ~Tree();                //destructor
+    Tree(Tree&& tree);
+    Tree& operator=(const Tree& other);     //assignment operator
+    Tree& operator=(Tree&& other);          //move assignment operator
     virtual Tree* clone() const = 0;
     void addChild(const Tree& child);
     void addChild(Tree* child);

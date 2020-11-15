@@ -18,8 +18,7 @@ public:
     void detach(int nodeInd);               //removes all edges from specific node
     bool isSatisfied();                     //if no active viruses
     const vector<int>& getIllNodes();       //return all the infected nodes
-
-    void setNumActives(bool raise);
+    void setNumActives(bool raise);         //adjusts number of active viruses
 
 private:
     vector<vector<int>> edges;

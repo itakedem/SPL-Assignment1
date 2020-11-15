@@ -58,8 +58,8 @@ void Virus::act(Session &session)
     int nextNode = nextNodeToInfect(nodeInd,graph);
     if (nextNode != -1)                     //-1 means no next node
     {
-        Virus *newVirus = new Virus(nextNode);         //do we need to delete???
-        session.addAgent(*newVirus);        //why we need * and not &?
+        Virus *newVirus = new Virus(nextNode);
+        session.addAgent(*newVirus);
         graph.CoVIDNode(nextNode);
         session.changeGraph().setNumActives(true);
         delete newVirus;

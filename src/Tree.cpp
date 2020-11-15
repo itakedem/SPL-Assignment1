@@ -15,6 +15,20 @@ Tree::Tree(const Tree& other): node(other.node), children({}){
     }
 
 }
+
+Tree::Tree(Tree&& tree): node(tree.node), children({})
+{
+    for(Tree* child: tree.children)
+    {
+        children.push_back(child);
+        child = nullptr;
+    }
+    tree.children.clear();
+
+}
+
+
+
 Tree::~Tree() {clear();}
 
 void Tree::clear()
@@ -30,7 +44,7 @@ void Tree::clear()
     children.clear();
 }
 
-Tree &Tree::operator=(const Tree& other)
+Tree &Tree::operator=(const Tree& other)            //assignment operator
 {
     if (this != &other)
     {
@@ -42,7 +56,7 @@ Tree &Tree::operator=(const Tree& other)
         node = other.node;
     }
     return *this;
-}       //assignment operator
+}
 
 Tree &Tree::operator=(Tree &&other)                  //move operator
 {
