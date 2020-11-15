@@ -8,17 +8,16 @@ class Graph{
 public:
     Graph(vector<vector<int>> matrix);
     Graph();
-    Graph(Graph *pGraph);       //created by CLion
+    Graph(Graph *pGraph);                           //copy constructor
     const vector<vector<int>>& getEdges() const;
     int amountNeighbors(int nodeInd) const;
-    void infectNode(int nodeInd);
-    void CoVIDNode(int nodeInd);
+    void infectNode(int nodeInd);           //makes node infected
+    void CoVIDNode(int nodeInd);            //makes node carrier
     bool isInfected(int nodeInd);
     bool isCoVIDed(int nodeInd);
-    void detach(int nodeInd);
+    void detach(int nodeInd);               //removes all edges from specific node
     bool isSatisfied();                     //if no active viruses
-    const vector<int>& getNodeStat();
-    const vector<int>& getIllNodes();
+    const vector<int>& getIllNodes();       //return all the infected nodes
 
     void setNumActives(bool raise);
 

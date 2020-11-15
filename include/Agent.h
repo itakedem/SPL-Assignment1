@@ -8,8 +8,7 @@
 class Agent{
 public:
     Agent();
-    //Agent(Agent *newAgent);
-    virtual ~Agent();
+    virtual ~Agent();       //destructor
     virtual Agent* clone() const =0;
     virtual void act(Session& session)=0;
 
@@ -27,10 +26,10 @@ class Virus: public Agent{
 public:
     Virus(int nodeInd);
     virtual Agent* clone() const;
-    int nextNodeToInfect(int ind, Graph &graph);
+    int nextNodeToInfect(int ind, Graph &graph);        //finds the smallest index which is not infected
     virtual void act(Session &session);
 private:
-    const int nodeInd;
+    const int nodeInd;              //Index node of the virus
     bool active;                    //if false, there's no uninfected neighbors
 };
 
