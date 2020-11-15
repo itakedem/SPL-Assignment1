@@ -60,7 +60,7 @@ void Virus::act(Session &session)
     {
         Virus *newVirus = new Virus(nextNode);
         session.addAgent(newVirus);
-        graph.CoVIDNode(nextNode);
+        graph.CoVIDNode(nextNode);          //mark node as carrier
         session.changeGraph().setNumActives(true);
     }
     else
