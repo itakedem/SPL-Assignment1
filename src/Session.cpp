@@ -79,7 +79,7 @@ Session &Session::operator=(Session &&other){
 
 
 
-
+// clear Agents vector
 void Session::clearAgents()
 {
     for(Agent* agent: agents)
@@ -99,7 +99,7 @@ void Session::simulate()
 {
     while(!g.isSatisfied())
     {
-        int agentSize = agents.size();
+        int agentSize = agents.size();      //the size changes over the for loop so we are keeping the original size
         for(int i = 0; i< agentSize; i++)
             agents[i]->act(*this);
         cycle++;
@@ -107,23 +107,21 @@ void Session::simulate()
     output();
 }
 
+
+//adding a clone of the agent
 void Session::addAgent(const Agent &agent)
 {
     Agent* clone = agent.clone();
     agents.push_back(clone);
 }
 
+//adding the agent
 void Session::addAgent(Agent *agent){agents.push_back(agent);}
 
 
-void Session::setGraph(const Graph &graph)
-{
-    g = graph;
-}
+void Session::setGraph(const Graph &graph){g = graph;}
 
-void Session::enqueueInfected(int nodeInd) {
-    infectedQueue.push_back(nodeInd);
-}
+void Session::enqueueInfected(int nodeInd) {infectedQueue.push_back(nodeInd);}
 
 int Session::dequeueInfected()
 {
@@ -136,20 +134,18 @@ int Session::dequeueInfected()
     return -1;
 }
 
-TreeType Session::getTreeType() const {
-    return treeType;
-}
+TreeType Session::getTreeType() const {return treeType;}
 
-const Graph& Session::getGraph() const
-{
-    return g;
-}
+const Graph& Session::getGraph() const{return g;}
+
+//returns the graph with the ability to change the graph
 Graph& Session::changeGraph() {return g;}
 
-int Session::getCycle() const {
-    return cycle;
-}
 
+int Session::getCycle() const {return cycle;}
+
+
+//creates the output file
 void Session::output()
 {
     json j;
@@ -160,7 +156,7 @@ void Session::output()
 }
 
 
-
+//initiates the treeType from json
 void Session::TreeTypeJson(const string& type){
 
     if(type == "M")
@@ -171,6 +167,8 @@ void Session::TreeTypeJson(const string& type){
         treeType = Cycle;
 }
 
+
+//initiates the agents from json
 void Session::AgentsJson(const vector<tuple<string, int>>& agent) {
     for (auto a: agent) //creates the vector of agents in the session, based on the json config file
     {
