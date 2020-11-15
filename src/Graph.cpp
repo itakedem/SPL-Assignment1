@@ -46,8 +46,12 @@ void Graph::detach(int nodeInd) {
 
 bool Graph::isSatisfied() {return numActives == 0;}
 
+
+//return all the infected nodes
 const vector<int> &Graph::getIllNodes() {return illNodes;}
 
+
+//adjusts number of active viruses
 void Graph::setNumActives(bool raise)
 {
     if (raise)
