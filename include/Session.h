@@ -28,6 +28,7 @@ public:
     Session& operator=(Session&& other);    //move assignment operator
     void simulate();
     void addAgent(const Agent& agent);
+    void addAgent(Agent* agent);
     void setGraph(const Graph& graph);
     void enqueueInfected(int);
     int dequeueInfected();

@@ -50,7 +50,7 @@ void Virus::act(Session &session)
     if (!this->active)
         return;
     Graph& graph = session.changeGraph();
-    if (!graph.isInfected(nodeInd))
+    if (!graph.isInfected(nodeInd))         //if node is not yet infected --> infect node
         {
             graph.infectNode(nodeInd);
             session.enqueueInfected(nodeInd);
@@ -59,10 +59,9 @@ void Virus::act(Session &session)
     if (nextNode != -1)                     //-1 means no next node
     {
         Virus *newVirus = new Virus(nextNode);
-        session.addAgent(*newVirus);
+        session.addAgent(newVirus);
         graph.CoVIDNode(nextNode);
         session.changeGraph().setNumActives(true);
-        delete newVirus;
     }
     else
     {
